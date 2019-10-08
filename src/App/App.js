@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { movieTitles } from '../apiCalls';
+import Form from '../Form/Form';
 import './App.css';
 
 class App extends Component {
@@ -17,6 +18,7 @@ class App extends Component {
     return(
       <main>
         <h1>Yo, we got ourselves an App</h1>
+        <Form />
       </main>
     )
   }
