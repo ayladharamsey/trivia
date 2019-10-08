@@ -1,8 +1,8 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import App from './App';
+import CharacterCard from './CharacterCard';
 
-describe('App', () => {
+describe('CharacterCard', () => {
 
   beforeEach(() => {
 

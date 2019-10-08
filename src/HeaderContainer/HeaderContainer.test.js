@@ -1,8 +1,8 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import App from './App';
+import HeaderContainer from './HeaderContainer';
 
-describe('App', () => {
+describe('HeaderContainer', () => {
 
   beforeEach(() => {
 
