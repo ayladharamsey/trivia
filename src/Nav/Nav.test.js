@@ -1,8 +1,8 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import App from './App';
+import Nav from './Nav';
 
-describe('App', () => {
+describe('Nav', () => {
 
   beforeEach(() => {
 
