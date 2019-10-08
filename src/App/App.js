@@ -17,7 +17,6 @@ class App extends Component {
   render() {
     return(
       <main>
-        <h1>Yo, we got ourselves an App</h1>
         <Form />
       </main>
     )
