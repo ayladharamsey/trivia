@@ -9,7 +9,7 @@ const CharacterCard = () => {
             <h3> Population: <span>Population</span></h3>
             <h3> Species: <span>Species</span></h3>
             <h3> Other Films: <span> Films</span></h3>
-            <img></img>
+            <img alt='fave'></img>
         </article>
     )
 }
