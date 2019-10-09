@@ -8,7 +8,12 @@ const HeaderContainer = ({ name, quote, rating, signOut, viewCharacters}) => {
     return (
         <section>
             <Nav signOut={signOut}/>
-            <UserProfile name={name} quote={quote} rating={rating} viewCharacters={viewCharacters}/>
+            <UserProfile 
+                name={name} 
+                quote={quote} 
+                rating={rating} 
+                viewCharacters={viewCharacters}
+            />
         </section>
     )
 }

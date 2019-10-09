@@ -64,7 +64,13 @@ class App extends Component {
           rating={this.state.rating}
           updateAppState={this.updateAppState}
         />
-        <HeaderContainer name={this.state.name} quote={this.state.quote} rating={this.state.rating} signOut={this.signOut} viewCharacters={this.viewCharacters}/>
+        <HeaderContainer 
+          name={this.state.name} 
+          quote={this.state.quote} 
+          rating={this.state.rating} 
+          signOut={this.signOut} 
+          viewCharacters={this.viewCharacters}
+          />
         <Container />
       </main>
     )
