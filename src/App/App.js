@@ -9,7 +9,7 @@ class App extends Component {
     this.state = {
       name: '',
       quote: '',
-      rating: [],
+      rating: '',
       isFavorited: false
     }
   }
@@ -17,9 +17,9 @@ class App extends Component {
   updateState = (formState) => {
     console.log('formstate', formState)
     this.setState({
-      name: formState.name,
-      quote: formState.quote,
-      rating: formState.rating
+      name: formState.name[0], //why are these coming thru as arrays?
+      quote: formState.quote[0],
+      rating: formState.rating // not coming through, never assigned in Form 
     })
     console.log(this.state)
   }

@@ -8,7 +8,7 @@ class Form extends Component {
         this.state = {
             name: '',
             quote: '',
-            rating: []
+            rating: ''
         } 
     }
 
@@ -17,7 +17,6 @@ class Form extends Component {
     }
 
     handleSubmit = event => {
-        this.setState()
         this.props.updateState(this.state)
         this.setState({
             name: '',
@@ -57,12 +56,12 @@ class Form extends Component {
                 <select 
                     name='rating' 
                     size='3' 
-                    onClick={this.submitInfo}
+                    onChange={this.submitInfo}
                     value={this.state.rating}
                     >
-                    <option value='apprentice'>Apprentice</option>
-                    <option value='knight'>Knight</option>
-                    <option value='master'>Master</option>
+                    <option name='rating'value='apprentice' onClick={this.handleSubmit}>Apprentice</option>
+                    <option value='knight' onClick={this.handleSubmit}>Knight</option>
+                    <option value='master' onClick={this.handleSubmit}>Master</option>
                 </select>
                 <button onClick={this.handleSubmit}>Submit</button>
             </section>
