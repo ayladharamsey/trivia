@@ -18,19 +18,18 @@ class App extends Component {
     }
   }
 
-  updateState = (formState) => {
+  updateAppState = (formState) => {
     this.setState({
-      name: formState.name[0], //why are these coming thru as arrays?
-      quote: formState.quote[0],
+      name: formState.name, //why are these coming thru as arrays?
+      quote: formState.quote,
       rating: formState.rating // not coming through, never assigned in Form 
     })
   }
 
   componentDidMount = () => {
-    const movieNumber =  Math.floor(Math.random() * (6 - 2 + 1)) + 1
+    const movieNumber =  Math.floor(Math.random() * (6 - 2 + 1)) + 1 // refactor this to take in click event and pass id in place of movie number
     movieTitles('https://swapi.co/api/films')
     .then(data => this.setMovie(data.results[movieNumber])
-      // console.log('returned data is: ', data);
     )
       .catch(error => console.log('Holy batsmoke, something went wrong in App!'))
   }
@@ -40,13 +39,13 @@ class App extends Component {
   }
 
   render() {
-    return(
+    return (
       <main className="app">
         <Form 
           name={this.state.name}
           quote={this.state.quote}
           rating={this.state.rating}
-          updateState={this.updateState}
+          updateAppState={this.updateAppState}
         />
       </main>
     )

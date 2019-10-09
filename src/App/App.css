@@ -16,17 +16,6 @@
   justify-content: center;
 }
 
-
-section {
-  height: 60%;
-  width: 30%;
-  border: 3px solid #66FCF1;
-  border-radius: 5px;
-  background-color: #0B0C10;
-  margin-top: 10%;
-  padding: 20px;
-}
-
 h1 {
   color: #66FCF1;
   font-size: 1.7em;
