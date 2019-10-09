@@ -32,13 +32,14 @@ class App extends Component {
 
   viewCharacters() {
     console.log('viewing characters')
+    //needs to take us to the character information page
   }
 
   updateAppState = (formState) => {
     this.setState({
-      name: formState.name, //why are these coming thru as arrays?
+      name: formState.name, 
       quote: formState.quote,
-      rating: formState.rating // not coming through, never assigned in Form 
+      rating: formState.rating 
     })
   }
 
