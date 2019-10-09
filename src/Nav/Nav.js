@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types'
 import './Nav.css';
 
 const Nav = ({ signOut }) => {
@@ -12,3 +13,7 @@ const Nav = ({ signOut }) => {
 }
 
 export default Nav;
+
+Nav.propTypes = {
+    signOut: PropTypes.func,
+  }

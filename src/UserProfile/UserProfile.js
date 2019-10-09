@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types'
 import './UserProfile.css';
 
 const UserProfile = ({ name, quote, rating, viewCharacters }) => {
@@ -14,3 +15,10 @@ const UserProfile = ({ name, quote, rating, viewCharacters }) => {
 }
 
 export default UserProfile;
+
+UserProfile.propTypes = {
+    name: PropTypes.string,
+    quote: PropTypes.string,
+    rating: PropTypes.string,
+    viewCharacters: PropTypes.func
+  }
