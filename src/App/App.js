@@ -10,8 +10,20 @@ class App extends Component {
       movieData: [],
       charactersData: [],
       planetsData: [],
-      favorites: []
+      name: '',
+      quote: '',
+      rating: '',
+      isFavorited: false,
+      errMsg: ''
     }
+  }
+
+  updateState = (formState) => {
+    this.setState({
+      name: formState.name[0], //why are these coming thru as arrays?
+      quote: formState.quote[0],
+      rating: formState.rating // not coming through, never assigned in Form 
+    })
   }
 
   componentDidMount = () => {
@@ -22,15 +34,20 @@ class App extends Component {
     )
       .catch(error => console.log('Holy batsmoke, something went wrong in App!'))
   }
-
+  
   setMovie = (movieData) => {
     this.setState({ movieData })
   }
 
   render() {
     return(
-      <main>
-        <Form />
+      <main className="app">
+        <Form 
+          name={this.state.name}
+          quote={this.state.quote}
+          rating={this.state.rating}
+          updateState={this.updateState}
+        />
       </main>
     )
   }
