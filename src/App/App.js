@@ -18,10 +18,10 @@ class App extends Component {
     }
   }
 
-  updateState = (formState) => {
+  updateAppState = (formState) => {
     this.setState({
-      name: formState.name[0], //why are these coming thru as arrays?
-      quote: formState.quote[0],
+      name: formState.name, //why are these coming thru as arrays?
+      quote: formState.quote,
       rating: formState.rating // not coming through, never assigned in Form 
     })
   }
@@ -39,13 +39,13 @@ class App extends Component {
   }
 
   render() {
-    return(
+    return (
       <main className="app">
         <Form 
           name={this.state.name}
           quote={this.state.quote}
           rating={this.state.rating}
-          updateState={this.updateState}
+          updateAppState={this.updateAppState}
         />
       </main>
     )
