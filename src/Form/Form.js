@@ -15,11 +15,13 @@ class Form extends Component {
     render() {
         return(
             <section>
-                <h3>Name: </h3>
+                <img alt="logo"/>
+                <h1>Welcome to SWAPI!</h1>
+                <h3>Name </h3>
                 <input type='text' placeholder="Enter name" />
-                <h3>Quote: </h3>
+                <h3>Quote </h3>
                 <input type='text' placeholder="Enter quote" />
-                <h3>Jedi Rating: </h3>
+                <h3>Jedi Rating </h3>
                 <select name='rating' size='3'>
                     <option value='apprentice'>Apprentice</option>
                     <option value='knight'>Knight</option>
