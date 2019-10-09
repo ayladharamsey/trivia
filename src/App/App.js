@@ -27,14 +27,13 @@ class App extends Component {
   }
 
   componentDidMount = () => {
-    const movieNumber =  Math.floor(Math.random() * (6 - 2 + 1)) + 1
     movieTitles('https://swapi.co/api/films')
-    .then(data => this.setMovie(data.results[movieNumber])
+    .then(data => this.setMovie(data)
       // console.log('returned data is: ', data);
     )
-      .catch(error => console.log('Holy batsmoke, something went wrong in App!'))
+    .catch(error => console.log('Holy batsmoke, something went wrong in App!'))
   }
-  
+
   setMovie = (movieData) => {
     this.setState({ movieData })
   }
