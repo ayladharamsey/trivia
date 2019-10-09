@@ -1,12 +1,11 @@
 import React from 'react';
-import { signOut } from '../App/App'
 import './Nav.css';
 
-const Nav = () => {
+const Nav = ( { signOut }) => {
     return (
         <section>
             <h1>SWAPI</h1>
-            <button onClick={signOut}>Sign Out</button>
+            <button onClick={ signOut }>Sign Out</button>
         </section>
     )
 

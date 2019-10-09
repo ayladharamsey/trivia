@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { movieTitles } from '../apiCalls';
 import Form from '../Form/Form';
 import './App.css';
+import HeaderContainer from '../HeaderContainer/HeaderContainer'
+import Container from '../Container/Container'
 
 class App extends Component {
   constructor() {
@@ -19,7 +21,13 @@ class App extends Component {
   }
 
   signOut = () => {
-
+    console.log('ya made it hunny')
+    this.setState({
+      name: '',
+      quote: '',
+      rating: '',
+    })
+    //needs to route us back to login form
   }
 
   updateAppState = (formState) => {
@@ -51,7 +59,7 @@ class App extends Component {
           rating={this.state.rating}
           updateAppState={this.updateAppState}
         />
-        <HeaderContainer name={this.state.name} quote={this.state.quote} rating={this.state.rating} signOut={this.state.signOut}/>
+        <HeaderContainer name={this.state.name} quote={this.state.quote} rating={this.state.rating} signOut={this.signOut}/>
         <Container />
       </main>
     )

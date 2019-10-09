@@ -6,8 +6,8 @@ import UserProfile from '../UserProfile/UserProfile'
 const HeaderContainer = ({ name, quote, rating, signOut}) => {
     return (
         <section>
-            <Nav signOut={ signOut }/>
-            <UserProfile name={ name } quote={ quote } rating={ rating }/>
+            <Nav signOut={signOut}/>
+            <UserProfile name={name} quote={quote} rating={rating}/>
         </section>
     )
 }
