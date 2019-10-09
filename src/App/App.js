@@ -30,7 +30,7 @@ class App extends Component {
     //needs to route us back to login form
   }
 
-  viewCharacters() {
+  viewFavoriteCharacters() {
     console.log('viewing characters')
     //needs to take us to the character information page
   }
@@ -69,7 +69,7 @@ class App extends Component {
           quote={this.state.quote} 
           rating={this.state.rating} 
           signOut={this.signOut} 
-          viewCharacters={this.viewCharacters}
+          viewFavoriteCharacters={this.viewFavoriteCharacters}
           />
         <Container />
       </main>
