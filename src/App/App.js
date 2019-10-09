@@ -6,18 +6,36 @@ import './App.css';
 class App extends Component {
   constructor() {
     super();
+    this.state = {
+      name: '',
+      quote: '',
+      rating: '',
+      isFavorited: false
+    }
+  }
+
+  updateState = (formState) => {
+    this.setState({
+      name: formState.name[0], //why are these coming thru as arrays?
+      quote: formState.quote[0],
+      rating: formState.rating // not coming through, never assigned in Form 
+    })
   }
 
   componentDidMount = () => {
     return  movieTitles('https://swapi.co/api/films').then(data => console.log('returned data is: ', data))
       .catch(error => console.log('Holy batsmoke, something went wrong in App!'))
-
   }
 
   render() {
     return(
-      <main>
-        <Form />
+      <main className="app">
+        <Form 
+          name={this.state.name}
+          quote={this.state.quote}
+          rating={this.state.rating}
+          updateState={this.updateState}
+        />
       </main>
     )
   }
