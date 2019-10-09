@@ -30,6 +30,10 @@ class App extends Component {
     //needs to route us back to login form
   }
 
+  viewCharacters() {
+    console.log('viewing characters')
+  }
+
   updateAppState = (formState) => {
     this.setState({
       name: formState.name, //why are these coming thru as arrays?
@@ -59,7 +63,7 @@ class App extends Component {
           rating={this.state.rating}
           updateAppState={this.updateAppState}
         />
-        <HeaderContainer name={this.state.name} quote={this.state.quote} rating={this.state.rating} signOut={this.signOut}/>
+        <HeaderContainer name={this.state.name} quote={this.state.quote} rating={this.state.rating} signOut={this.signOut} viewCharacters={this.viewCharacters}/>
         <Container />
       </main>
     )
