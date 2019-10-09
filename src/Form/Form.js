@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './Form.css';
+import logo from '../images/logo.png'
 
 
 class Form extends Component {
@@ -32,8 +33,7 @@ class Form extends Component {
     render() {
         return (
             <form>
-                <img alt="logo" src="/images/star_wars_logo_PNG42.png"/>
-                <h1>Welcome to SWAPI!</h1>
+                <img alt="logo" src={logo}/>
                 <h3>Name </h3>
                 <input 
                     type='text' 
