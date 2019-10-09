@@ -6,7 +6,6 @@ export const movieTitles = moviesUrl => {
     const movieData = movies.results.map(movie => {
       const { title, characters } = movie;
       const characterData = characters.map(character => {
-        console.log('character', character);
         return getCharacters(character)
       .then(name => ({ title, name }))
       // .then(something => console.log('something is ', something))
@@ -17,12 +16,9 @@ export const movieTitles = moviesUrl => {
   })
   // .then(cbMovies => console.log('could be movies: ', cbMovies))
   .catch(error => console.log(error.message, 'Holy bat smoke batman, something went wrong!'))
-
 }
 
-
- const getCharacters = charactersUrl => {
-  //  console.log('In getCharacters with ', charactersUrl);
+const getCharacters = charactersUrl => {
   const proxyurl = "https://cors-anywhere.herokuapp.com/";
   return fetch (proxyurl + charactersUrl)
   .then(response => response.json())
