@@ -24,9 +24,6 @@ class Form extends Component {
             rating: ''
         });
 
-        // passes information up to app 
-        // within app it will update the state to match updated state within form
-        // we will have handleSubmit reset the state back to null
         //then it navigates us to the next page
         
     }
