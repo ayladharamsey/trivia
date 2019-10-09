@@ -3,11 +3,11 @@ import './HeaderContainer.css';
 import Nav from '../Nav/Nav';
 import UserProfile from '../UserProfile/UserProfile'
 
-const HeaderContainer = () => {
+const HeaderContainer = ({ name, quote, rating, signOut}) => {
     return (
         <section>
-            <Nav />
-            <UserProfile />
+            <Nav signOut={ signOut }/>
+            <UserProfile name={ name } quote={ quote } rating={ rating }/>
         </section>
     )
 }
