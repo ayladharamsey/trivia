@@ -12,13 +12,13 @@ class Form extends Component {
         } 
     }
 
-    submitInfo = event => {
+    handleChange = event => {
         this.setState({[event.target.name]: event.target.value})
     }
 
     handleSubmit = event => {
         event.preventDefault();
-        this.props.updateState(this.state)
+        this.props.updateAppState(this.state)
         this.setState({
             name: '',
             quote: '',
@@ -38,7 +38,7 @@ class Form extends Component {
                 <input 
                     type='text' 
                     placeholder="Enter name" 
-                    onChange={this.submitInfo} 
+                    onChange={this.handleChange} 
                     name="name"
                     value={this.state.name}
                     />
@@ -46,12 +46,12 @@ class Form extends Component {
                 <input 
                     type='text' 
                     placeholder="Enter quote" 
-                    onChange={this.submitInfo}
+                    onChange={this.handleChange}
                     name="quote"
                     value={this.state.quote} 
                     />
                 <h3> Select Jedi Rating </h3>
-                <select name='rating' size='3' value={this.state.rating} onChange={this.submitInfo}>
+                <select name='rating' size='3' value={this.state.rating} onChange={this.handleChange}>
                     <option value='selectRanking'>Select Ranking</option>
                     <option value='apprentice'>Apprentice</option>
                     <option value='knight'>Knight</option>

@@ -18,7 +18,7 @@ class App extends Component {
     }
   }
 
-  updateState = (formState) => {
+  updateAppState = (formState) => {
     this.setState({
       name: formState.name, //why are these coming thru as arrays?
       quote: formState.quote,
@@ -30,7 +30,6 @@ class App extends Component {
     const movieNumber =  Math.floor(Math.random() * (6 - 2 + 1)) + 1 // refactor this to take in click event and pass id in place of movie number
     movieTitles('https://swapi.co/api/films')
     .then(data => this.setMovie(data.results[movieNumber])
-      // console.log('returned data is: ', data);
     )
       .catch(error => console.log('Holy batsmoke, something went wrong in App!'))
   }
@@ -46,7 +45,7 @@ class App extends Component {
           name={this.state.name}
           quote={this.state.quote}
           rating={this.state.rating}
-          updateState={this.updateState}
+          updateAppState={this.updateAppState}
         />
       </main>
     )
