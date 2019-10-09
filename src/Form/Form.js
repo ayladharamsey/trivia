@@ -8,20 +8,21 @@ class Form extends Component {
         this.state = {
             name: '',
             quote: '',
-            rating: ''
+            rating:'Select Ranking'
         } 
     }
 
-    submitInfo = (event) => {
-        this.setState({[event.target.name]: [event.target.value]})
+    submitInfo = event => {
+        this.setState({[event.target.name]: event.target.value})
     }
 
     handleSubmit = event => {
+        event.preventDefault();
         this.props.updateState(this.state)
         this.setState({
             name: '',
             quote: '',
-            rating: ''
+            rating:''
         });
 
         //then it navigates us to the next page
@@ -29,8 +30,8 @@ class Form extends Component {
     }
 
     render() {
-        return(
-            <section>
+        return (
+            <form>
                 <img alt="logo" src="/images/star_wars_logo_PNG42.png"/>
                 <h1>Welcome to SWAPI!</h1>
                 <h3>Name </h3>
@@ -50,18 +51,14 @@ class Form extends Component {
                     value={this.state.quote} 
                     />
                 <h3> Select Jedi Rating </h3>
-                <select 
-                    name='rating' 
-                    size='3' 
-                    onChange={this.submitInfo}
-                    value={this.state.rating}
-                    >
-                    <option name='rating'value='apprentice' onClick={this.handleSubmit}>Apprentice</option>
-                    <option value='knight' onClick={this.handleSubmit}>Knight</option>
-                    <option value='master' onClick={this.handleSubmit}>Master</option>
+                <select name='rating' size='3' value={this.state.rating} onChange={this.submitInfo}>
+                    <option value='selectRanking'>Select Ranking</option>
+                    <option value='apprentice'>Apprentice</option>
+                    <option value='knight'>Knight</option>
+                    <option value='master'>Master</option>
                 </select>
                 <button onClick={this.handleSubmit}>Submit</button>
-            </section>
+            </form>
         )
     }
 }
