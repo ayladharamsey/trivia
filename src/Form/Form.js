@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import './Form.css';
 import logo from '../images/logo.png'
 
@@ -64,3 +65,9 @@ class Form extends Component {
 }
 
 export default Form;
+
+Form.propTypes = {
+    name: PropTypes.string,
+    quote: PropTypes.string,
+    rating: PropTypes.string
+}
