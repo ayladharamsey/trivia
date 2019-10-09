@@ -15,7 +15,13 @@ class App extends Component {
   }
 
   updateState = (formState) => {
-    console.log(formState)
+    console.log('formstate', formState)
+    this.setState({
+      name: formState.name,
+      quote: formState.quote,
+      rating: formState.rating
+    })
+    console.log(this.state)
   }
 
   componentDidMount = () => {
