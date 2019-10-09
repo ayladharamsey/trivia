@@ -1,10 +1,10 @@
 import React from 'react';
-import './Modle.css';
+import './Modal.css';
 
-const Modle = () => {
+const Modal = () => {
     return (
         
     )
 }
 
-export default Modle;
+export default Modal;
