@@ -67,8 +67,9 @@ class App extends Component {
               />
               <Route
                 path='/movies'  
+                exact
                 render={ () => 
-                  <section>
+                  <>
                     <HeaderContainer 
                       name={this.state.name} 
                       quote={this.state.quote} 
@@ -76,8 +77,47 @@ class App extends Component {
                       signOut={this.signOut} 
                       viewFavoriteCharacters={this.viewFavoriteCharacters}
                     />
-                    <Container />
-                  </section>
+                    <Container movieData={this.state.movieData}/>
+                  </>
+                }
+              />
+              <Route
+                path='/movies/characters'  
+                exact
+                render={ () => 
+                  <>
+                    <HeaderContainer 
+                      name={this.state.name} 
+                      quote={this.state.quote} 
+                      rating={this.state.rating} 
+                      signOut={this.signOut} 
+                      viewFavoriteCharacters={this.viewFavoriteCharacters}
+                    />
+                    <Container 
+                      charactersData={this.state.charactersData} 
+                      planetsData={this.state.planetsData}
+                    />
+                  </>
+                }
+              />
+              <Route
+                path='/movies/characters/favorites'  
+                exact
+                render={ () => 
+                  <>
+                    <HeaderContainer 
+                      name={this.state.name} 
+                      quote={this.state.quote} 
+                      rating={this.state.rating} 
+                      signOut={this.signOut} 
+                      viewFavoriteCharacters={this.viewFavoriteCharacters}
+                    />
+                    <Container 
+                      charactersData={this.state.charactersData} 
+                      planetsData={this.state.planetsData}
+                      isFavorited={this.state.isFavorited}
+                    />
+                  </>
                 }
               />     
             </Switch>
