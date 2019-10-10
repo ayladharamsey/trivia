@@ -10,12 +10,14 @@ class Form extends Component {
         this.state = {
             name: '',
             quote: '',
-            rating:'Select Ranking'
+            rating: 'Select Rating',
+            error:''
         } 
     }
 
     handleChange = event => {
         this.setState({[event.target.name]: event.target.value})
+        console.log(this.state)
     }
 
     handleSubmit = event => {
@@ -24,7 +26,7 @@ class Form extends Component {
         this.setState({
             name: '',
             quote: '',
-            rating:''
+            rating:'Select Ranking'
         });
 
         //then it navigates us to the next page
@@ -32,6 +34,8 @@ class Form extends Component {
     }
 
     render() {
+        const { name, quote, rating } = this.state;
+        const isEnabled = (name && quote && rating !== 'Select Ranking');
         return (
             <form>
                 <img alt="logo" src={logo}/>
@@ -52,13 +56,18 @@ class Form extends Component {
                     value={this.state.quote} 
                     />
                 <h3> Select Jedi Rating </h3>
-                <select name='rating' size='3' value={this.state.rating} onChange={this.handleChange}>
-                    <option value='selectRanking'>Select Ranking</option>
-                    <option value='apprentice'>Apprentice</option>
-                    <option value='knight'>Knight</option>
-                    <option value='master'>Master</option>
+                <select
+                    name='rating' 
+                    size='3'
+                    onChange={this.handleChange} 
+                    value={this.state.rating}>
+                        <option disabled value='Select Rating'>Select Rating</option>
+                        <option value='apprentice'>Apprentice</option>
+                        <option value='knight'>Knight</option>
+                        <option value='master'>Master</option>
                 </select>
-                <button onClick={this.handleSubmit}>Submit</button>
+                <h5>{this.state.error}</h5>
+                <button onClick={this.handleSubmit} disabled={!isEnabled}>Submit</button>
             </form>
         )
     }

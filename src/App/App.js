@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { movieTitles } from '../apiCalls';
 import Form from '../Form/Form';
 import './App.css';
+import HeaderContainer from '../HeaderContainer/HeaderContainer'
+import Container from '../Container/Container'
 
 class App extends Component {
   constructor() {
@@ -18,11 +20,26 @@ class App extends Component {
     }
   }
 
+  signOut = () => {
+    console.log('ya made it hunny')
+    this.setState({
+      name: '',
+      quote: '',
+      rating: '',
+    })
+    //needs to route us back to login form
+  }
+
+  viewFavoriteCharacters() {
+    console.log('viewing characters')
+    //needs to take us to the character information page
+  }
+
   updateAppState = (formState) => {
     this.setState({
-      name: formState.name, //why are these coming thru as arrays?
+      name: formState.name, 
       quote: formState.quote,
-      rating: formState.rating // not coming through, never assigned in Form 
+      rating: formState.rating 
     })
   }
 
@@ -48,6 +65,14 @@ class App extends Component {
           rating={this.state.rating}
           updateAppState={this.updateAppState}
         />
+        <HeaderContainer 
+          name={this.state.name} 
+          quote={this.state.quote} 
+          rating={this.state.rating} 
+          signOut={this.signOut} 
+          viewFavoriteCharacters={this.viewFavoriteCharacters}
+          />
+        <Container />
       </main>
     )
   }

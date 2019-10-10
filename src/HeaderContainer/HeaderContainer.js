@@ -2,14 +2,28 @@ import React from 'react';
 import './HeaderContainer.css';
 import Nav from '../Nav/Nav';
 import UserProfile from '../UserProfile/UserProfile'
+import PropTypes from 'prop-types'
 
-const HeaderContainer = () => {
+const HeaderContainer = ({ name, quote, rating, signOut, viewFavoriteCharacters}) => {
     return (
         <section>
-            <Nav />
-            <UserProfile />
+            <Nav signOut={signOut}/>
+            <UserProfile 
+                name={name} 
+                quote={quote} 
+                rating={rating} 
+                viewFavoriteCharacters={viewFavoriteCharacters}
+            />
         </section>
     )
 }
 
 export default HeaderContainer;
+
+HeaderContainer.propTypes = {
+    name: PropTypes.string,
+    quote: PropTypes.string,
+    rating: PropTypes.string,
+    signOut: PropTypes.func,
+    viewCharacters: PropTypes.func
+  }

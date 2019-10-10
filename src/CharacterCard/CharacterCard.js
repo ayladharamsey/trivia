@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types'
 import './CharacterCard.css';
 
 class CharacterCard extends Component {
@@ -28,7 +27,3 @@ class CharacterCard extends Component {
 }
 
 export default CharacterCard;
-
-CharacterCard.propTypes = {
-    isFavorited: PropTypes.bool
-  }

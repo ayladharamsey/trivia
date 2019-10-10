@@ -56,6 +56,11 @@ button:hover {
   color: #0B0C10;
 }
 
+button:disabled {
+  background-color: #0B0C10;
+  color:#66FCF1;
+}
+
 select {
   width: 200px;
   height: 30px;
