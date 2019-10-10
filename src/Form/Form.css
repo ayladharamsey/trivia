@@ -11,3 +11,15 @@ form {
   img {
     height: 25%;
   }
+
+  option {
+    height: 30px;
+  }
+
+  select {
+    width: 200px;
+    height: 30px;
+    font-size: .8em;
+    border-radius: 5px;
+  
+  }

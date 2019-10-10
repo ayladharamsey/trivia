@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types'
 import './UserProfile.css';
+import { Link } from 'react-router-dom'
 
 const UserProfile = ({ name, quote, rating, viewFavoriteCharacters }) => {
     return (
@@ -9,7 +10,9 @@ const UserProfile = ({ name, quote, rating, viewFavoriteCharacters }) => {
             <h2>Welcome <span>{name}</span></h2>
             <h3>Favorite Quote: <span> {quote} </span></h3>
             <h3>Level: <span>{rating}</span></h3>
-            <button onClick={viewFavoriteCharacters}>Favorite Characters</button> 
+            <Link to="/movies/characters/favorites">
+                <button onClick={viewFavoriteCharacters}>Favorite Characters</button> 
+            </Link>
         </section>
     )
 }

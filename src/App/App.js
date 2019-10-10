@@ -4,6 +4,7 @@ import Form from '../Form/Form';
 import './App.css';
 import HeaderContainer from '../HeaderContainer/HeaderContainer'
 import Container from '../Container/Container'
+import { BrowserRouter, Switch, Route } from 'react-router-dom'
 
 class App extends Component {
   constructor() {
@@ -46,7 +47,6 @@ class App extends Component {
   componentDidMount = () => {
     movieTitles('https://swapi.co/api/films')
     .then(data => this.setMovie(data)
-      // console.log('returned data is: ', data);
     )
     .catch(error => console.log('Holy batsmoke, something went wrong in App!'))
   }
@@ -58,21 +58,32 @@ class App extends Component {
   render() {
     return (
       <main className="app">
-        <Form 
-          name={this.state.name}
-          quote={this.state.quote}
-          rating={this.state.rating}
-          updateAppState={this.updateAppState}
-        />
-        <HeaderContainer 
-          name={this.state.name} 
-          quote={this.state.quote} 
-          rating={this.state.rating} 
-          signOut={this.signOut} 
-          viewFavoriteCharacters={this.viewFavoriteCharacters}
-          />
-        <Container />
-      </main>
+        <BrowserRouter>
+          <Switch>
+              <Route 
+                path='/' 
+                exact 
+                render={() => <Form updateAppState={this.updateAppState}/>}
+              />
+              <Route
+                path='/movies' 
+                exact 
+                render={ () => 
+                  <section>
+                    <HeaderContainer 
+                      name={this.state.name} 
+                      quote={this.state.quote} 
+                      rating={this.state.rating} 
+                      signOut={this.signOut} 
+                      viewFavoriteCharacters={this.viewFavoriteCharacters}
+                    />
+                    <Container />
+                  </section>
+                }
+              />     
+            </Switch>
+          </BrowserRouter>
+        </main>
     )
   }
 }

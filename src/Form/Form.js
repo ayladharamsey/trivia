@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import './Form.css';
 import logo from '../images/logo.png'
+import { Link } from 'react-router-dom'
+
 
 
 class Form extends Component {
@@ -11,7 +13,6 @@ class Form extends Component {
             name: '',
             quote: '',
             rating: 'Select Rating',
-            error:''
         } 
     }
 
@@ -21,8 +22,9 @@ class Form extends Component {
     }
 
     handleSubmit = event => {
+        const{ updateAppState } = this.props
         event.preventDefault();
-        this.props.updateAppState(this.state)
+        updateAppState(this.state);
         this.setState({
             name: '',
             quote: '',
@@ -67,7 +69,9 @@ class Form extends Component {
                         <option value='master'>Master</option>
                 </select>
                 <h5>{this.state.error}</h5>
-                <button onClick={this.handleSubmit} disabled={!isEnabled}>Submit</button>
+                <Link to='/movies'>
+                    <button onClick={this.handleSubmit} disabled={!isEnabled}>Submit</button>
+                </Link>
             </form>
         )
     }

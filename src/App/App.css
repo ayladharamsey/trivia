@@ -16,6 +16,7 @@
   justify-content: center;
 }
 
+
 h1 {
   color: #66FCF1;
   font-size: 1.7em;
@@ -61,14 +62,5 @@ button:disabled {
   color:#66FCF1;
 }
 
-select {
-  width: 200px;
-  height: 30px;
-  font-size: .8em;
-  border-radius: 5px;
 
-}
 
-option {
-  height: 30px;
-}
