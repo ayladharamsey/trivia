@@ -66,8 +66,7 @@ class App extends Component {
                 render={() => <Form updateAppState={this.updateAppState}/>}
               />
               <Route
-                path='/movies' 
-                exact 
+                path='/movies'  
                 render={ () => 
                   <section>
                     <HeaderContainer 
