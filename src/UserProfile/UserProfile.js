@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import './UserProfile.css';
 import { Link } from 'react-router-dom'
 
-const UserProfile = ({ name, quote, rating, viewFavoriteCharacters }) => {
+const UserProfile = ({ name, quote, rating }) => {
     return (
         <section>
             <img alt='profile'></img>
@@ -11,7 +11,7 @@ const UserProfile = ({ name, quote, rating, viewFavoriteCharacters }) => {
             <h3>Favorite Quote: <span> {quote} </span></h3>
             <h3>Level: <span>{rating}</span></h3>
             <Link to="/movies/characters/favorites">
-                <button onClick={viewFavoriteCharacters}>Favorite Characters</button> 
+                <button >Favorite Characters</button> 
             </Link>
         </section>
     )

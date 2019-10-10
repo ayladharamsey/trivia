@@ -4,7 +4,9 @@ import Form from '../Form/Form';
 import './App.css';
 import HeaderContainer from '../HeaderContainer/HeaderContainer'
 import Container from '../Container/Container'
-import { BrowserRouter, Switch, Route } from 'react-router-dom'
+import { BrowserRouter, Switch, Route} from 'react-router-dom'
+import { createBrowserHistory } from 'history';
+const history = createBrowserHistory();
 
 class App extends Component {
   constructor() {
@@ -22,18 +24,11 @@ class App extends Component {
   }
 
   signOut = () => {
-    console.log('ya made it hunny')
     this.setState({
       name: '',
       quote: '',
       rating: '',
     })
-    //needs to route us back to login form
-  }
-
-  viewFavoriteCharacters() {
-    console.log('viewing characters')
-    //needs to take us to the character information page
   }
 
   updateAppState = (formState) => {
@@ -63,7 +58,7 @@ class App extends Component {
               <Route 
                 path='/' 
                 exact 
-                render={() => <Form updateAppState={this.updateAppState}/>}
+                render={() => <Form history ={history} updateAppState={this.updateAppState}/>}
               />
               <Route
                 path='/movies'  
@@ -75,7 +70,6 @@ class App extends Component {
                       quote={this.state.quote} 
                       rating={this.state.rating} 
                       signOut={this.signOut} 
-                      viewFavoriteCharacters={this.viewFavoriteCharacters}
                     />
                     <Container movieData={this.state.movieData}/>
                   </>
@@ -91,7 +85,6 @@ class App extends Component {
                       quote={this.state.quote} 
                       rating={this.state.rating} 
                       signOut={this.signOut} 
-                      viewFavoriteCharacters={this.viewFavoriteCharacters}
                     />
                     <Container 
                       charactersData={this.state.charactersData} 
@@ -110,7 +103,6 @@ class App extends Component {
                       quote={this.state.quote} 
                       rating={this.state.rating} 
                       signOut={this.signOut} 
-                      viewFavoriteCharacters={this.viewFavoriteCharacters}
                     />
                     <Container 
                       charactersData={this.state.charactersData} 
