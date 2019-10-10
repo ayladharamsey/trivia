@@ -8,8 +8,8 @@ class App extends Component {
     super();
     this.state = {
       movieData: [],
-      charactersData: [],
-      planetsData: [],
+      characterData: [],
+      planetData: [],
       name: '',
       quote: '',
       rating: '',
@@ -39,6 +39,7 @@ class App extends Component {
   }
 
   render() {
+    const { movieData, characterData, planetData, name, quote, rating, isFavorited, errMsg} = this.state;
     return (
       <main className="app">
         <Form 
