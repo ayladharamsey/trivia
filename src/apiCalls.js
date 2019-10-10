@@ -4,13 +4,14 @@ export const movieTitles = moviesUrl => {
   .then(response => response.json())
   .then(movies => {
     const movieData = movies.results.map(movie => {
-      const { title, characters } = movie;
-      const characterData = characters.map(character => {
-        return getCharacters(character)
-        .then(name => ({ name }))
-      // .then(something => console.log('something is ', something))
-      });
-      return Promise.all(characterData)
+      const { title, episode_id, release_date, opening_crawl, characters } = movie;
+      return { title, episode_id, release_date, opening_crawl}
+      // const characterData = characters.map(character => {
+      //   return getCharacters(character)
+      //   .then(name => ({ title, name }))
+      // // .then(something => console.log('something is ', something))
+      // });
+      // return Promise.all(characterData)
     });
 
     return Promise.all(movieData);})

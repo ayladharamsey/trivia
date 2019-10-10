@@ -3,9 +3,8 @@
 import React from 'react';
 import Crawl from 'react-star-wars-crawl';
 import 'react-star-wars-crawl/lib/index.css';
-import './OpeningCrawl.scss'
 import PropTypes from 'prop-types'
-import './OpeningCrawl.scss';
+import './OpeningCrawl.css';
 import $ from 'jquery';
 
 const OpeningCrawl = ({title, date, episode, text, hideLanding}) => {

@@ -3,7 +3,8 @@ import { movieTitles } from '../apiCalls';
 import Form from '../Form/Form';
 import './App.css';
 import HeaderContainer from '../HeaderContainer/HeaderContainer'
-import Container from '../Container/Container'
+import Container from '../Container/Container';
+import OpeningCrawl from '../OpeningCrawl/OpeningCrawl'
 
 class App extends Component {
   constructor() {
@@ -73,6 +74,13 @@ class App extends Component {
           viewFavoriteCharacters={this.viewFavoriteCharacters}
           />
         <Container />
+        
+        {movieData.length && <OpeningCrawl 
+          title={movieData[0].title}
+          date={movieData[0].release_date}
+          episode={movieData[0].episode_id}
+          text={movieData[0].opening_crawl}
+          />}
       </main>
     )
   }
