@@ -57,9 +57,10 @@ class App extends Component {
   }
 
   render() {
-    const { movieData, characterData, planetData, name, quote, rating, isFavorited, errMsg} = this.state;
+    const { movieData, name, quote, rating, isFavorited, errMsg} = this.state;
     return (
       <main className="app">
+        
         <Form 
           name={this.state.name}
           quote={this.state.quote}
@@ -74,14 +75,15 @@ class App extends Component {
           viewFavoriteCharacters={this.viewFavoriteCharacters}
           />
         <Container />
-        
+        <p>
         {movieData.length && <OpeningCrawl 
-          title={movieData[0].title}
-          date={movieData[0].release_date}
-          episode={movieData[0].episode_id}
-          text={movieData[0].opening_crawl}
+          title={movieData[6].title}
+          date={movieData[6].release_date}
+          episode={movieData[6].episode_id}
+          text={movieData[6].opening_crawl}
           />}
-      </main>
+        </p>
+        </main>
     )
   }
 }
