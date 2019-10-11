@@ -1,5 +1,16 @@
 .userContainer {
 background-color: bisque; 
 width: 100vw;
-height: 15vh;
+height: 20vh;
+justify-content: space-evenly;
+display: flex;
+}
+
+.right {
+    text-align: left;
+}
+
+h2 {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1.3em;
 }
