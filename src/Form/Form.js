@@ -65,7 +65,7 @@ class Form extends Component {
                         <option value='master'>Master</option>
                 </select>
                 <h5>{this.state.error}</h5>
-                <Link to='/movies'><button onClick={this.handleSubmit} disabled={!isEnabled}>Submit</button></Link>
+                <Link to='/movies'><button className='submit' onClick={this.handleSubmit} disabled={!isEnabled}>Submit</button></Link>
             </form>
         )
     }

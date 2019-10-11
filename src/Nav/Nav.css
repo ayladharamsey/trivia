@@ -1,0 +1,10 @@
+h1 {
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.navContainer {
+    display: flex;
+    justify-content: space-between;
+    width:100vw;
+    background-color: blue;
+}

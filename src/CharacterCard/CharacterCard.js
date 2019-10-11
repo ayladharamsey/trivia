@@ -8,11 +8,10 @@ class CharacterCard extends Component {
             isFavorited: false
         }
     }
-    
 
     render() {
         return (
-            <article>
+            <article className='card'>
                 <h3> Name: <span>Name</span></h3>
                 <h3> Homeworld: <span>Homeworld</span></h3>
                 <h3> Population: <span>Population</span></h3>
