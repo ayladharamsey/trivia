@@ -4,10 +4,6 @@ import './Form.css';
 import logo from '../images/logo.png'
 import { Link } from 'react-router-dom'
 
-
-
-
-
 class Form extends Component {
     constructor() {
         super();
@@ -32,8 +28,6 @@ class Form extends Component {
             quote: '',
             rating:'Select Ranking'
         });
-
-        //then it navigates us to the next page
         
     }
 

@@ -58,7 +58,7 @@ class App extends Component {
               <Route 
                 path='/' 
                 exact 
-                render={() => <Form history ={history} updateAppState={this.updateAppState}/>}
+                render={() => <Form history={history} updateAppState={this.updateAppState}/>}
               />
               <Route
                 path='/movies'  
