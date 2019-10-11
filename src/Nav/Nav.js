@@ -5,8 +5,8 @@ import { Link } from 'react-router-dom';
 
 const Nav = ({ signOut }) => {
     return (
-        <section>
-            <h1>SWAPI</h1>
+        <section className='navContainer'>
+            <h1>Star Wars Trivia</h1>
             <Link to="/">
                 <button onClick={signOut}>Sign Out</button>
             </Link>

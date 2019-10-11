@@ -4,19 +4,25 @@ form {
     border: 3px solid #66FCF1;
     border-radius: 5px;
     background-color: #0B0C10;
-    margin-top: 10%;
+    margin-left: 35%;
     padding: 20px;
   }
 
-  img {
+.submit {
+    display: block;
+    margin-left:37%;
+    margin-top: 30px;
+  }
+
+img {
     height: 25%;
   }
 
-  option {
+option {
     height: 30px;
   }
 
-  select {
+select {
     width: 200px;
     height: 30px;
     font-size: .8em;
