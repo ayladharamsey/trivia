@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { movieTitles } from '../apiCalls';
 import Form from '../Form/Form';
-import './App.css';
+import './App.scss';
 import HeaderContainer from '../HeaderContainer/HeaderContainer'
 import Container from '../Container/Container';
 import { BrowserRouter, Switch, Route} from 'react-router-dom'
