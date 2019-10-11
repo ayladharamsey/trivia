@@ -4,7 +4,8 @@ import Form from '../Form/Form';
 import './App.css';
 import HeaderContainer from '../HeaderContainer/HeaderContainer'
 import Container from '../Container/Container';
-import OpeningCrawl from '../OpeningCrawl/OpeningCrawl'
+import OpeningCrawl from '../OpeningCrawl/OpeningCrawl';
+import { Route, NavLink } from 'react-router-dom';
 
 class App extends Component {
   constructor() {
