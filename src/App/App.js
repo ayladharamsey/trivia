@@ -4,7 +4,7 @@ import Form from '../Form/Form';
 import './App.css';
 import HeaderContainer from '../HeaderContainer/HeaderContainer'
 import Container from '../Container/Container'
-import { BrowserRouter, Switch, Route} from 'react-router-dom'
+import { Switch, Route } from 'react-router-dom' 
 import { createBrowserHistory } from 'history';
 const history = createBrowserHistory();
 
@@ -53,7 +53,6 @@ class App extends Component {
   render() {
     return (
       <main className="app">
-        <BrowserRouter>
           <Switch>
               <Route 
                 path='/' 
@@ -113,7 +112,6 @@ class App extends Component {
                 }
               />     
             </Switch>
-          </BrowserRouter>
         </main>
     )
   }
