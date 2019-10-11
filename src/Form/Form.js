@@ -19,16 +19,13 @@ class Form extends Component {
     }
 
     handleSubmit = event => {
-        this.props.history.push('/movies')
         const{ updateAppState } = this.props
-        event.preventDefault();
         updateAppState(this.state);
         this.setState({
             name: '',
             quote: '',
             rating:'Select Ranking'
-        });
-        
+        });  
     }
 
     render() {
