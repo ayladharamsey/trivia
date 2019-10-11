@@ -76,7 +76,7 @@ class App extends Component {
                 }
               />
               <Route
-                path='/movies/characters'  
+                path='/movies/:id/characters'  
                 exact
                 render={ () => 
                   <>
@@ -94,7 +94,7 @@ class App extends Component {
                 }
               />
               <Route
-                path='/movies/characters/favorites'  
+                path='/movies/:id/characters/favorites'  
                 exact
                 render={ () => 
                   <>
