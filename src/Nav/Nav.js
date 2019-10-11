@@ -1,12 +1,15 @@
 import React from 'react';
-import PropTypes from 'prop-types'
+import PropTypes from 'prop-types';
 import './Nav.css';
+import { Link } from 'react-router-dom';
 
 const Nav = ({ signOut }) => {
     return (
         <section>
             <h1>SWAPI</h1>
-            <button onClick={signOut}>Sign Out</button>
+            <Link to="/">
+                <button onClick={signOut}>Sign Out</button>
+            </Link>
         </section>
     )
 

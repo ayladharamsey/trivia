@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import './Form.css';
 import logo from '../images/logo.png'
-
+import { Link } from 'react-router-dom'
 
 class Form extends Component {
     constructor() {
@@ -11,25 +11,23 @@ class Form extends Component {
             name: '',
             quote: '',
             rating: 'Select Rating',
-            error:''
         } 
     }
 
     handleChange = event => {
         this.setState({[event.target.name]: event.target.value})
-        console.log(this.state)
     }
 
     handleSubmit = event => {
+        this.props.history.push('/movies')
+        const{ updateAppState } = this.props
         event.preventDefault();
-        this.props.updateAppState(this.state)
+        updateAppState(this.state);
         this.setState({
             name: '',
             quote: '',
             rating:'Select Ranking'
         });
-
-        //then it navigates us to the next page
         
     }
 
@@ -67,7 +65,7 @@ class Form extends Component {
                         <option value='master'>Master</option>
                 </select>
                 <h5>{this.state.error}</h5>
-                <button onClick={this.handleSubmit} disabled={!isEnabled}>Submit</button>
+                <Link to='/movies'><button onClick={this.handleSubmit} disabled={!isEnabled}>Submit</button></Link>
             </form>
         )
     }

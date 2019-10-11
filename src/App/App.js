@@ -4,6 +4,9 @@ import Form from '../Form/Form';
 import './App.css';
 import HeaderContainer from '../HeaderContainer/HeaderContainer'
 import Container from '../Container/Container'
+import { BrowserRouter, Switch, Route} from 'react-router-dom'
+import { createBrowserHistory } from 'history';
+const history = createBrowserHistory();
 
 class App extends Component {
   constructor() {
@@ -21,18 +24,11 @@ class App extends Component {
   }
 
   signOut = () => {
-    console.log('ya made it hunny')
     this.setState({
       name: '',
       quote: '',
       rating: '',
     })
-    //needs to route us back to login form
-  }
-
-  viewFavoriteCharacters() {
-    console.log('viewing characters')
-    //needs to take us to the character information page
   }
 
   updateAppState = (formState) => {
@@ -46,7 +42,6 @@ class App extends Component {
   componentDidMount = () => {
     movieTitles('https://swapi.co/api/films')
     .then(data => this.setMovie(data)
-      // console.log('returned data is: ', data);
     )
     .catch(error => console.log('Holy batsmoke, something went wrong in App!'))
   }
@@ -58,21 +53,68 @@ class App extends Component {
   render() {
     return (
       <main className="app">
-        <Form 
-          name={this.state.name}
-          quote={this.state.quote}
-          rating={this.state.rating}
-          updateAppState={this.updateAppState}
-        />
-        <HeaderContainer 
-          name={this.state.name} 
-          quote={this.state.quote} 
-          rating={this.state.rating} 
-          signOut={this.signOut} 
-          viewFavoriteCharacters={this.viewFavoriteCharacters}
-          />
-        <Container />
-      </main>
+        <BrowserRouter>
+          <Switch>
+              <Route 
+                path='/' 
+                exact 
+                render={() => <Form history={history} updateAppState={this.updateAppState}/>}
+              />
+              <Route
+                path='/movies'  
+                exact
+                render={ () => 
+                  <>
+                    <HeaderContainer 
+                      name={this.state.name} 
+                      quote={this.state.quote} 
+                      rating={this.state.rating} 
+                      signOut={this.signOut} 
+                    />
+                    <Container movieData={this.state.movieData}/>
+                  </>
+                }
+              />
+              <Route
+                path='/movies/:id/characters'  
+                exact
+                render={ () => 
+                  <>
+                    <HeaderContainer 
+                      name={this.state.name} 
+                      quote={this.state.quote} 
+                      rating={this.state.rating} 
+                      signOut={this.signOut} 
+                    />
+                    <Container 
+                      charactersData={this.state.charactersData} 
+                      planetsData={this.state.planetsData}
+                    />
+                  </>
+                }
+              />
+              <Route
+                path='/movies/:id/characters/favorites'  
+                exact
+                render={ () => 
+                  <>
+                    <HeaderContainer 
+                      name={this.state.name} 
+                      quote={this.state.quote} 
+                      rating={this.state.rating} 
+                      signOut={this.signOut} 
+                    />
+                    <Container 
+                      charactersData={this.state.charactersData} 
+                      planetsData={this.state.planetsData}
+                      isFavorited={this.state.isFavorited}
+                    />
+                  </>
+                }
+              />     
+            </Switch>
+          </BrowserRouter>
+        </main>
     )
   }
 }
