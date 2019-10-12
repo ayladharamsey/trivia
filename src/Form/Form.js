@@ -19,9 +19,10 @@ class Form extends Component {
     }
 
     handleSubmit = event => {
-        this.props.history.push('/movies')
+        console.log('Submit is it ');
+        // this.props.history.push('/movies')
         const{ updateAppState } = this.props
-        event.preventDefault();
+        // event.preventDefault();
         updateAppState(this.state);
         this.setState({
             name: '',
@@ -36,7 +37,7 @@ class Form extends Component {
         const isEnabled = (name && quote && rating !== 'Select Ranking');
         return (
             <form>
-                <img alt="logo" src={logo}/>
+                <img alt="star wars logo" src={logo}/>
                 <h3>Name </h3>
                 <input 
                     type='text' 

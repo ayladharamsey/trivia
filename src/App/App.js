@@ -6,7 +6,6 @@ import HeaderContainer from '../HeaderContainer/HeaderContainer'
 import Container from '../Container/Container';
 import { BrowserRouter, Switch, Route} from 'react-router-dom'
 import { createBrowserHistory } from 'history';
-// import { Route, NavLink } from 'react-router-dom';
 import OpeningCrawl from '../OpeningCrawl/OpeningCrawl';
 
 const history = createBrowserHistory();
@@ -34,6 +33,7 @@ class App extends Component {
   }
 
   updateAppState = (formState) => {
+    console.log('updateAppState', formState);
     this.setState({
       name: formState.name, 
       quote: formState.quote,
@@ -115,14 +115,20 @@ class App extends Component {
                   </>
                 }
               />
-              <Route>
-                {movieData.length && <OpeningCrawl 
-                  title={movieData[6].title}
-                  date={movieData[6].release_date}
-                  episode={movieData[6].episode_id}
-                  text={movieData[6].opening_crawl}
-                  />}
-              </Route>  
+              <Route
+                path='/movies/:id'
+                exact 
+                render={ () => 
+                  <>
+                    <OpeningCrawl 
+                      title={movieData[6].title}
+                      date={movieData[6].release_date}
+                      episode={movieData[6].episode_id}
+                      text={movieData[6].opening_crawl}
+                    />
+                  </>
+                }
+              /> 
             </Switch>
           </BrowserRouter>
         </main>
