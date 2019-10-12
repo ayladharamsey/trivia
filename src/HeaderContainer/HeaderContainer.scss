@@ -1,0 +1,12 @@
+.header-component {
+  height: 15%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-items: center;
+  margin: 10px 0;
+  h2 {
+    color: white;
+    margin: auto;
+    margin-top: 50px;
+  }
+}

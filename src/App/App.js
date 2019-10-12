@@ -49,6 +49,9 @@ class App extends Component {
   }
 
   setMovie = (movieData) => {
+    movieData.sort((a, b) => {
+      return a.episode_id - b.episode_id
+    });
     this.setState({ movieData })
   }
 

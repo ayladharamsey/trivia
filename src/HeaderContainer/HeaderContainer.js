@@ -1,12 +1,12 @@
 import React from 'react';
-import './HeaderContainer.css';
+import './HeaderContainer.scss';
 import Nav from '../Nav/Nav';
 import UserProfile from '../UserProfile/UserProfile'
 import PropTypes from 'prop-types'
 
 const HeaderContainer = ({ name, quote, rating, signOut}) => {
     return (
-        <section>
+        <section className="header-component">
             <Nav signOut={signOut}/>
             <UserProfile 
                 name={name} 

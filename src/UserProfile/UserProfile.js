@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 
 const UserProfile = ({ name, quote, rating }) => {
     return (
-        <section>
+        <section className="card">
             <img alt='profile'></img>
             <h2>Welcome <span>{name}</span></h2>
             <h3>Favorite Quote: <span> {quote} </span></h3>
