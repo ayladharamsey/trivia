@@ -29,9 +29,9 @@ const OpeningCrawl = ({title, date, episode, text, hideLanding}) => {
       subTitle={title}
       text = {text + date}
       />
-      <button className="hide-movie" onClick={()=> hideLanding()}>Skip Movie Stuff</button>
-      <iframe width="2" height="2" src="https://www.youtube-nocookie.com/embed/EjMNNpIksaI?controls=1&autoplay=1&autohide=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-    <div class="button">
+      {/* <button className="hide-movie" onClick={()=> hideLanding()}>Skip Movie Stuff</button> */}
+      <iframe width="2" height="2" src="https://www.youtube-nocookie.com/embed/EjMNNpIksaI?controls=1&autoplay=1&autohide=1" frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullscreen></iframe>
+    <div className="button">
         <button id="pause-button">STOP AUDIO</button>
     </div>
     </article>
@@ -42,8 +42,7 @@ export default OpeningCrawl;
 
 OpeningCrawl.propTypes = {
   title: PropTypes.string.isRequired,
-  episode: PropTypes.string.isRequired,
+  episode: PropTypes.number.isRequired,
   date: PropTypes.string.isRequired,
-  text: PropTypes.string.isRequired,
-  hideLanding: PropTypes.func.isRequired
+  text: PropTypes.string.isRequired
 }
