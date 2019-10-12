@@ -12,37 +12,37 @@ form {
     display: block;
     margin-left:37%;
     margin-top: 30px;
-  }
+}
 
 img {
     height: 25%;
-  }
+}
 
 input:focus,
 select:focus {
-  outline: none;
-  box-shadow: 0px 0px 15px red;
+    outline: none;
+    box-shadow: 0px 0px 15px red;
 }
 
 .select select:active {
-  color: #fff;
-  background-color: #0074d9;
+    color: #fff;
+    background-color: #0074d9;
 }
 
 .select:after {
-  position: absolute;
-  top: 50%;
-  right: 1.25rem;
-  display: inline-block;
-  content: "";
-  width: 0;
-  height: 0;
-  margin-top: -.15rem;
-  pointer-events: none;
-  border-top: .35rem solid;
-  border-right: .35rem solid transparent;
-  border-bottom: .35rem solid transparent;
-  border-left: .35rem solid transparent;
+    position: absolute;
+    top: 50%;
+    right: 1.25rem;
+    display: inline-block;
+    content: "";
+    width: 0;
+    height: 0;
+    margin-top: -.15rem;
+    pointer-events: none;
+    border-top: .35rem solid;
+    border-right: .35rem solid transparent;
+    border-bottom: .35rem solid transparent;
+    border-left: .35rem solid transparent;
 }
 
 .select select:focus:-moz-focusring {
