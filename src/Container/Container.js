@@ -17,7 +17,7 @@ const Container = (props) => {
                 />
             </section>
         )
-    }).sort(() => props.movieData.episode_id)
+    })
     return (
         <section>
             {/* <CharacterCard /> */}

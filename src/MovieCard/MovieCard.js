@@ -1,5 +1,6 @@
 import React from 'react';
-import './MovieCard.css';
+import './MovieCard.scss';
+import Star from "../assets/star.svg" 
 import { Link } from 'react-router-dom';
 
 const MovieCard = ({ title, episode, release_year, characters}) => {
