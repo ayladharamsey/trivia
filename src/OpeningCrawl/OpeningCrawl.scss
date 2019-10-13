@@ -1,0 +1,31 @@
+.hide-movie {
+  font-size: 16px;
+  font-family: 'AnakinMono', sans-serif;
+  font-weight: bold;
+  position: absolute;
+  top:10px;
+  left:10px;
+  z-index: 2;
+  border-radius: 50%;
+  height:120px;
+  width: 120px;
+}
+
+.hide-movie:hover {
+  background-color: black;
+  font-family: 'STARWARS';
+  color: #feda4a;
+  font-size: 20px;
+}
+
+#pause-button { 
+  background-color:#7F8C8D;
+  height: 35px;
+  width: 75px;
+  margin-left: 10px;
+}
+
+#pause-button:hover { 
+  background-color:#C0392B;
+  color: white;
+}

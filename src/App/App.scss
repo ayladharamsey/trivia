@@ -1,0 +1,77 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+@font-face {font-family: "STARWARS";
+  src: url("//db.onlinewebfonts.com/t/c00548f5d217ed324ae9096051927001.eot");
+  src: url("//db.onlinewebfonts.com/t/c00548f5d217ed324ae9096051927001.eot?#iefix") format("embedded-opentype"),
+  url("//db.onlinewebfonts.com/t/c00548f5d217ed324ae9096051927001.woff") format("woff"),
+  url("//db.onlinewebfonts.com/t/c00548f5d217ed324ae9096051927001.ttf") format("truetype"),
+  url("//db.onlinewebfonts.com/t/c00548f5d217ed324ae9096051927001.svg#STARWARS") format("svg");
+}
+
+.app {
+  // background-image:url('https://media.giphy.com/media/MaThe6p8WAKbf9NDDM/giphy.gif'); 
+  background-color: black; //We can change this back in production - JMO
+  background-size: 100%;
+  background-position: center;
+  font-family: Roboto;
+  height: 200vw;  //Might want to change this back as well - JMO
+  width: 100vw;
+  text-align: center;
+  justify-content: center;
+}
+
+
+h1 {
+  // color: #66FCF1;
+  font-family: 'STARWARS';
+  color: #feda4a;
+  font-size: 1.7em;
+  font-weight: 300;
+}
+
+h3 {
+  color:#FFFFFF;
+  font-size: 1em;
+  font-weight: 500; 
+  margin-top: 18px;
+  margin-bottom: 7px;
+
+}
+
+input {
+  width: 200px;
+  height: 30px;
+  border-style: none;
+  border-radius: 5px;
+}
+
+button {
+  width: 100px;
+  height: 30px;
+  font-weight: 700;
+  border: 2px solid #66FCF1;
+  background-color: #0B0C10;
+  color:#66FCF1;
+  border-radius: 5px;
+}
+
+button:hover {
+  background-color: #66FCF1;
+  color: #0B0C10;
+}
+
+button:disabled {
+  background-color: #0B0C10;
+  color:#66FCF1;
+}
+
+a {
+  text-decoration: none;
+}
+
+
+
