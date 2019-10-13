@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import { movieTitles } from '../apiCalls';
+import { movieTitles, getCharacters, getPeople, getSpecies, getPlanets, getResidents } from '../apiCalls';
 import Form from '../Form/Form';
 import './App.scss';
 import HeaderContainer from '../HeaderContainer/HeaderContainer'
 import Container from '../Container/Container';
-import { BrowserRouter, Switch, Route} from 'react-router-dom'
+import { Switch, Route} from 'react-router-dom'
 import { createBrowserHistory } from 'history';
 import OpeningCrawl from '../OpeningCrawl/OpeningCrawl';
 
@@ -53,9 +53,18 @@ class App extends Component {
   }
   componentDidMount = () => {
     movieTitles('https://swapi.co/api/films')
-    .then(data => this.setMovie(data)
-    )
-    .catch(error => console.log('Holy batsmoke, something went wrong in App!'))
+    .then(data => this.setMovie(data))
+    .catch(error => console.log('Holy bat smoke, something went wrong in App!'))
+  
+    getCharacters('https://swapi.co/api/people/')
+    .then(data => getPeople(data.results))
+    .then(data => getSpecies(data))
+    .then(data => this.setCharacters(data))
+
+    getPlanets('https://swapi.co/api/planets/')
+    // .then(data => console.log('planet data is : ', data))
+    .then(data => getResidents(data.results))
+    .then(data => this.setPlanets(data))
   }
 
   setMovie = (movieData) => {
@@ -63,6 +72,13 @@ class App extends Component {
       return a.episode_id - b.episode_id
     });
     this.setState({ movieData })
+  }
+
+  setCharacters = (characterData) => {
+    this.setState({ characterData })
+  }
+  setPlanets = (planetData) => {
+    this.setState({ planetData })
   }
 
   render() {
