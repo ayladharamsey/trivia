@@ -1,9 +1,13 @@
 .userContainer {
-background-color: bisque; 
-width: 100vw;
-height: 20vh;
-justify-content: space-evenly;
-display: flex;
+    background-color: #0B0C10; 
+    border: 3px solid #66FCF1;
+    border-radius: 5px;
+    width: 95vw;
+    height: 20vh;
+    justify-content: space-evenly;
+    display: flex;
+    margin-top: 30px;
+    margin-left: 40px;
 }
 
 .right {
