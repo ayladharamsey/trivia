@@ -1,0 +1,12 @@
+.card-components {
+  height: 50vw;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  justify-items: center;
+  margin: 10px 0;
+  h2 {
+    color: white;
+    margin: auto;
+    margin-top: 50px;
+  }
+}
