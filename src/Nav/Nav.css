@@ -1,10 +1,11 @@
 h1 {
     font-family: 'Courier New', Courier, monospace;
+    font-weight: 600;
 }
 
 .navContainer {
     display: flex;
     justify-content: space-between;
     width:100vw;
-    background-color: rgba(255 255, 255, 0.4);
+    padding: 30px;
 }

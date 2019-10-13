@@ -51,16 +51,17 @@ class Form extends Component {
                     value={this.state.quote} 
                     />
                 <h3> Select Jedi Rating </h3>
-                <select
-                    name='rating' 
-                    size='3'
-                    onChange={this.handleChange} 
-                    value={this.state.rating}>
-                        <option disabled value='Select Rating'>Select Rating</option>
-                        <option value='apprentice'>Apprentice</option>
-                        <option value='knight'>Knight</option>
-                        <option value='master'>Master</option>
-                </select>
+                <div className='select'>
+                    <select
+                        name='rating' 
+                        onChange={this.handleChange} 
+                        value={this.state.rating}>
+                            <option disabled value='Select Rating'>Select Rating</option>
+                            <option value='apprentice'>Apprentice</option>
+                            <option value='knight'>Knight</option>
+                            <option value='master'>Master</option>
+                    </select>
+                </div>
                 <h5>{this.state.error}</h5>
                 <Link to='/movies'><button className='submit' onClick={this.handleSubmit} disabled={!isEnabled}>Submit</button></Link>
             </form>
