@@ -16,7 +16,7 @@ class App extends Component {
       movieData: [],
       characterData: [],
       planetData: [],
-      favoriteCards: [],
+      favoriteCards: [1, 2  ],
       name: '',
       quote: '',
       rating: '',
@@ -122,6 +122,7 @@ class App extends Component {
                   <Container 
                     charactersData={this.state.charactersData} 
                     planetsData={this.state.planetsData}
+                    favoriteCards={this.state.favoriteCards}
                   />
                 </>
               }
@@ -140,23 +141,27 @@ class App extends Component {
                   <Container 
                     charactersData={this.state.charactersData} 
                     planetsData={this.state.planetsData}
-                    isFavorited={this.state.isFavorited}
+                    favoriteCards={this.state.favoriteCards}
                   />
                 </>
               }
             />
             <Route
-              path='/movies/:id'
-              exact 
-              render={ () => 
-                <>
+              exact path='/movies/:id'
+              render={ ( {match} ) => { 
+                const { id } = match.params;
+                const numId = parseInt(id)
+                return(
                   <OpeningCrawl 
-                    title={movieData[6].title}
-                    date={movieData[6].release_date}
-                    episode={movieData[6].episode_id}
-                    text={movieData[6].opening_crawl}
-                  />
-                </>
+                      title={movieData[numId - 1].title}
+                      date={movieData[numId - 1].release_date}
+                      episode={movieData[numId - 1].episode_id}
+                      text={movieData[numId - 1].opening_crawl}
+                      favoriteCards={this.state.favoriteCards}
+                      characters={this.state.movieData.characters}
+                    />
+                 )
+                }   
               }
             /> 
           </Switch>
