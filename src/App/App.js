@@ -51,6 +51,7 @@ class App extends Component {
       this.setState({ favoriteCards: removeCard });
     } 
   }
+
   componentDidMount = () => {
     movieTitles('https://swapi.co/api/films')
     .then(data => this.setMovie(data))
@@ -77,6 +78,7 @@ class App extends Component {
   setCharacters = (characterData) => {
     this.setState({ characterData })
   }
+  
   setPlanets = (planetData) => {
     this.setState({ planetData })
   }
