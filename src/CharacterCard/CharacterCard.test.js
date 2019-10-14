@@ -16,5 +16,8 @@ describe('CharacterCard', () => {
 
   });
 
+  it('should render the name, homeworld, population, species, and other films', () => {
+
+  });
 
 });
