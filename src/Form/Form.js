@@ -19,7 +19,6 @@ class Form extends Component {
     }
 
     handleSubmit = event => {
-        console.log('Submit is it ');
         const{ updateAppState } = this.props
         updateAppState(this.state);
         this.setState({
