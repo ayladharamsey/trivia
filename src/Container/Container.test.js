@@ -8,7 +8,7 @@ describe('Container', () => {
 
   });
 
-  it('should do something cool', () => {
+  it('should match the snapshot', () => {
 
   });
 

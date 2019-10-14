@@ -3,7 +3,6 @@ import './Container.scss';
 import MovieCard from '../MovieCard/MovieCard'
 
 const Container = (props) => {
-    console.log('container props: ', props);  
     const movieData = props.movieData.map(movie => {
         return (
             <section className="card-components">
