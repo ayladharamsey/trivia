@@ -19,7 +19,6 @@ class Form extends Component {
     }
 
     handleSubmit = event => {
-        console.log('Submit is it ');
         // this.props.history.push('/movies')
         const{ updateAppState } = this.props
         // event.preventDefault();

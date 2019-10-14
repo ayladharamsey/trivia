@@ -9,7 +9,7 @@ const Container = (props) => {
         return (
             <section className="card-components">
                 <MovieCard
-                key={movie.episode_id + movie.title} 
+                id={movie.episode_id} 
                 title={movie.title}
                 episode={movie.episode_id}
                 release_year={movie.release_date}
