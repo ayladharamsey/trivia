@@ -1,6 +1,5 @@
 import React from 'react';
 import './Container.scss';
-import CharacterCard from '../CharacterCard/CharacterCard';
 import MovieCard from '../MovieCard/MovieCard'
 
 const Container = (props) => {
@@ -27,3 +26,5 @@ const Container = (props) => {
 }
 
 export default Container;
+
+// need to add propTypess

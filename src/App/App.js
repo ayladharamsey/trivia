@@ -7,8 +7,8 @@ import Container from '../Container/Container';
 import { Switch, Route} from 'react-router-dom'
 import { createBrowserHistory } from 'history';
 import OpeningCrawl from '../OpeningCrawl/OpeningCrawl';
-
 const history = createBrowserHistory();
+
 class App extends Component {
   constructor() {
     super();
@@ -82,7 +82,7 @@ class App extends Component {
   }
 
   render() {
-    const { movieData, name, quote, rating, errMsg} = this.state;
+    const { movieData } = this.state;
     return (
       <main className="app">
           <Switch>

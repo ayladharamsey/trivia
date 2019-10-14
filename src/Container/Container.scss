@@ -1,12 +1,24 @@
-.card-components {
-  height: 50vw;
+section {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  justify-items: center;
-  margin: 10px 0;
+  grid-auto-rows: auto;
+
   h2 {
     color: white;
     margin: auto;
     margin-top: 50px;
   }
+
+  .card {
+    display: block;
+    box-sizing: border-box;
+    margin: 10px;
+    height: 220px;
+    width: 250px;
+    background: rgba(155, 155, 155, .2);
+    padding-left: 10px;
+    color: white;
+    border: solid 3px rgb(204, 203, 203);
+  }
+
 }
