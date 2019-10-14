@@ -1,5 +1,11 @@
 section {
   display: grid;
+  width: 100%;
+  grid-template-areas:
+    "nav nav nav nav nav"
+    "user user user user user"
+    "container container container container container";
+
   grid-template-columns: repeat(5, 1fr);
   grid-auto-rows: auto;
 
