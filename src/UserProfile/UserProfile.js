@@ -8,7 +8,6 @@ const UserProfile = ({ name, quote, rating }) => {
         <section className='userContainer'>
             <div className='left'>
                 <h2>Welcome <span>{name}</span></h2>
-                <img alt='profile'></img>
             </div>
             <div className='right'>
                 <h3>Favorite Quote: <span> {quote} </span></h3>
