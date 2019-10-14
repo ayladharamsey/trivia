@@ -8,7 +8,11 @@ describe('CharacterCard', () => {
 
   });
 
-  it('should do something cool', () => {
+  it('should start with a default state', () => {
+
+  });
+
+  it('should match the snapshot', () => {
 
   });
 
