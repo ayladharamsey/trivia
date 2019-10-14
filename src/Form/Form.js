@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import './Form.css';
+import './Form.scss';
 import logo from '../images/logo.png'
 import { Link } from 'react-router-dom'
 
@@ -20,9 +20,7 @@ class Form extends Component {
 
     handleSubmit = event => {
         console.log('Submit is it ');
-        // this.props.history.push('/movies')
         const{ updateAppState } = this.props
-        // event.preventDefault();
         updateAppState(this.state);
         this.setState({
             name: '',
