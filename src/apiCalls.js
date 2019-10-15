@@ -8,7 +8,7 @@ export const movieTitles = moviesUrl => {
       return { title, episode_id, release_date, opening_crawl, characters } 
     });
     return Promise.all(movieData);})
-  .catch(error => console.log(error.message, 'Holy bat smoke batman, something went wrong with movies!'))
+  .catch(error => console.log(error.message, 'These are not the movies you are looking for.'))
 }
 
 export const getMovieCharacters = (movieId) => {

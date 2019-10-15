@@ -81,4 +81,5 @@ describe('App Functionality ', () => {
     wrapper.instance().setPlanets(['pluto', 'mercury'])
     expect(wrapper.state('planetData').length).toEqual(2)
   });
+  
 });
