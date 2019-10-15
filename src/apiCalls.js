@@ -121,20 +121,3 @@ export const getSpecies = (people) => {
   return Promise.all(promises);
 }
 
-export const getResidents = (planets) => {
-  const allPlanets = planets.map(planet => {
-    const residents = planet.residents.map(resident => {
-      return fetch(resident)
-      .then(response => response.json())
-      .then(data => data.name)
-      .catch(error => console.log({ error }))
-    });
-    return Promise.all(residents)
-      .then(residents => ({
-        name: planet.name,
-        population: planet.population,
-        residents: residents
-      }))
-  });
-  return Promise.all(allPlanets)
-}
