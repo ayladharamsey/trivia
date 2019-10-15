@@ -41,32 +41,34 @@ class App extends Component {
   }
 
   updateFavoriteCard = (favoriteStatus) => {
+    console.log('favorite data ', favoriteStatus, this.state.favoriteCards);
      if(!this.state.favoriteCards.includes(favoriteStatus)) {
     //   favoriteStatus = !favoriteStatus
       this.setState({ favoriteCards: [...this.state.favoriteCards, favoriteStatus]});
         
-    // } else {
+    } else {
+      console.log('favorite else');
     //   favoriteStatus = !favoriteStatus;
-    //   const removeCard = this.state.favoriteCards.filter(card => card !== favoriteStatus)
-    //   this.setState({ favoriteCards: removeCard });
+     const removeCard = this.state.favoriteCards.filter(card => card !== favoriteStatus)
+       this.setState({ favoriteCards: removeCard });
     } 
   }
 
   componentDidMount = () => {
     movieTitles('https://swapi.co/api/films')
     .then(data => {
-      console.log('movies data ', data);
+      // console.log('movies data ', data);
       return this.setMovie(data)})
     .catch(error => console.log(error.message, 'Holy bat smoke, something went wrong in App!'))
   
     getMovieCharacters(6) //Remember to make this dynamic
     .then(data => {
-      console.log('Movie character data ', data);
+      // console.log('Movie character data ', data);
       return data
     })
     .then(data => getFilmTitles(data))
     .then(data => {
-      console.log('characterData ', data);
+      // console.log('characterData ', data);
       return getPeople(data)})
     .then(data => getSpecies(data))
     .then(data => this.setCharacters(data))
@@ -116,9 +118,9 @@ class App extends Component {
               path='/movies/:id/characters'  
               exact
               render={ ({ match }) => { 
-                console.log('character params: ', match);
+                // console.log('character params: ', match);
                 const { characters, favorites } = match.params;
-                console.log('characters, favorites', characters);
+                // console.log('characters, favorites', characters);
                 return(
                   <>
                   <HeaderContainer 
@@ -129,7 +131,6 @@ class App extends Component {
                     />
                     <Container 
                       charactersData={this.state.characterData} 
-                      //planetsData={this.state.planetData}
                       favoriteCards={this.state.favoriteCards}
                       favoriteStatus={this.updateFavoriteCard}
                     />

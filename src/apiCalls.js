@@ -6,14 +6,9 @@ export const movieTitles = moviesUrl => {
     const movieData = movies.results.map(movie => {
       let { title, episode_id, release_date, opening_crawl, characters } = movie;
       return { title, episode_id, release_date, opening_crawl, characters } 
-      //  const characterData = movie.characters.map(character => {
-      //   return getCharacters(character)
-      //   .then(name => ({ name }))
-      // });
-      // return Promise.all(characterData);
     });
     return Promise.all(movieData);})
-  .catch(error => console.log(error.message, 'Holy bat smoke batman, something went wrong with movies!'))
+  .catch(error => console.log(error.message, 'These are not the movies you are looking for.'))
 }
 
 export const getMovieCharacters = (movieId) => {

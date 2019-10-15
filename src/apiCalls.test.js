@@ -1,5 +1,30 @@
+import React from 'react';
+import { shallow } from 'enzyme';
+import App from './App/App';
+import { movieTitles } from './apiCalls';
 
-import apiCalls from './apiCalls';
+describe('apiCalls', () => {
+    beforeEach(() => {
+      window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
+        ok: true,
+        json: () => Promise.resolve()
+      }))
+    });
+  
+    it('should make successful call to get movie data', async () => {
+      const url = 'https://swapi.co/api/films/1';
+      const corsUrl = 'https://cors-anywhere.herokuapp.com/undefined'
+      await movieTitles(url)
+      expect(window.fetch).toHaveBeenCalledWith('https://cors-anywhere.herokuapp.com/https://swapi.co/api/films/1')
+    });
+  
+    it('should throw error when fetching movies', async () => {
+      window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
+        ok: false
+      }))
+      await expect(movieTitles()).rejects.toEqual(Error('These are not the movies you are looking for.'))
+    });
+}),
 
 describe('Character Data Fetching', () => { 
 
@@ -19,9 +44,12 @@ describe('Character Data Fetching', () => {
   
     });
   
-  });
+}),
 
 describe('Movie Data Fetching', () => {
+
+
+ 
     it('should be able to fetch movie data with the correct URL', () => {
   
     });
@@ -39,7 +67,7 @@ describe('Movie Data Fetching', () => {
     });
   
     
-});
+}),
 
 describe('Planet Data Fetching', () => {
 
@@ -58,4 +86,4 @@ describe('Planet Data Fetching', () => {
     it('should throw an error if the server is down ', () => {
   
     });
-}); 
+})
