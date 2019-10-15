@@ -25,7 +25,7 @@ The learning goals for this project are as follows:
 
 ### Screenshots
 
-
+<img width="1407" alt="Screen Shot 2019-10-15 at 4 30 54 PM" src="https://user-images.githubusercontent.com/17992280/66874794-914f2b00-ef69-11e9-95d4-edd4e5465e0a.png">
 
 
 ### Authors:
