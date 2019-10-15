@@ -6,7 +6,10 @@ form {
     background-color: #0B0C10;
     margin-left: 35%;
     padding: 20px;
-  }
+    text-align: center;
+    position: absolute;
+    margin-top: 10%;
+}
 
 .submit {
     display: block;
@@ -56,6 +59,7 @@ select:focus {
   width: 52%;
   color: #555;
 }
+
 .select select {
   display: inline-block;
   width: 100%;
