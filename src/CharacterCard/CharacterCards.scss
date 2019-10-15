@@ -9,15 +9,19 @@
 }
 
 .star-card-button {
-  display: flex;
-  height: 50px;
-  margin-left: auto;
+  background-image: url('../assets/star.svg');
+  background-size: no-repeat; 
+  width: 30px;
+  position: absolute;
+  height: 30px;
 }
 
-.star-card-button:active {
-  display: flex;
-  height: 50px;
-  margin-left: auto;
+.star-card-button:active, .star-card-button:hover {
+  background-image: url('../assets/star-active.svg');
+  background-size: no-repeat; 
+  width: 30px;
+  position: absolute;
+  height: 30px;
 }
 
 .films {
