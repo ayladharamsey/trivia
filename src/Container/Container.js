@@ -23,7 +23,7 @@ const Container = (props) => {
     })} else {
          //console.log('character data', props.charactersData);
         cardData = props.charactersData.map(character => {
-            // console.log('character is: ', character);
+             console.log('films are: ', character.films);
             // let pop = props.planetsData.find(planet => {
             //     return (planet.name === character.homeworld)
             // });

@@ -64,20 +64,12 @@ class App extends Component {
       console.log('Movie character data ', data);
       return data
     })
-   // getCharacters('https://swapi.co/api/people/')
+    .then(data => getFilmTitles(data))
     .then(data => {
       console.log('characterData ', data);
       return getPeople(data)})
     .then(data => getSpecies(data))
-    //.then(data => getFilmTitles(data))
     .then(data => this.setCharacters(data))
-
-    getPlanets('https://swapi.co/api/planets/')
-    // .then(data => console.log('planet data is : ', data))
-    .then(data => getResidents(data.results))
-    .then(data => {
-      console.log('residents info: ', data);
-      return this.setPlanets(data)})
   }
 
   setMovie = (movieData) => {

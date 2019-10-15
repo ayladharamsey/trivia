@@ -28,7 +28,6 @@ export const getMovieCharacters = (movieId) => {
   .then(data => data.characters)
   .then(characters=> characters.splice(0,10))
   .then(data => getCharacterSpecifics(data))
-  .then(data => getFilmTitles(data))
 }
 
 const getCharacterSpecifics = (characterUrl) => {
@@ -52,7 +51,7 @@ const getCharacterSpecifics = (characterUrl) => {
   return Promise.all(charactersData)
 } 
 
- const getFilmTitles = (characters) => {
+export const getFilmTitles = (characters) => {
   let films = characters.map(character => {
     let filmTitles = character.films.map(film => {
       return fetch(film)
@@ -105,7 +104,8 @@ export const getPeople = (people) => {
         homeworld: data.name,
         population: data.population,
         name: person.name,
-        species: person.species
+        species: person.species,
+        films: person.films
         }))
       .catch(error => console.log(error));
   });

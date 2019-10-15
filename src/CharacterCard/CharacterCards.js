@@ -4,7 +4,7 @@ import Star from "../assets/star.svg";
 import activeStar from "../assets/star-active.svg"
 
 const CharacterCards = ({ id, name, homeworld, population, species, films, favoriteCards, favoriteStatus }) => {
-  // console.log('CharacterCards is here', name)
+   console.log('CharacterCards films', name, films)
   return (
     
     <section className="card">
