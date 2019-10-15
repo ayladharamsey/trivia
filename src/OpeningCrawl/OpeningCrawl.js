@@ -28,8 +28,8 @@ const OpeningCrawl = ({title, date, episode, text, favoriteCards, characters }) 
       subTitle={title}
       text = {text + date}
       />
-      <Link to='/characters'>
-        <button className="hide-movie" data={favoriteCards} onClick={() => {console.log('Help!!!', characters, favoriteCards)}} >Go to Characters</button> }
+      <Link to={`/movies/${episode}/characters`}>
+        <button className="show-characters" data={characters, favoriteCards} onClick={() => {console.log('Help!!!', characters, favoriteCards)}} >Go to Characters</button> }
       </Link>    
       <iframe width="2" height="2" src="https://www.youtube-nocookie.com/embed/EjMNNpIksaI?controls=1&autoplay=1&autohide=1" frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullscreen></iframe>
     <div className="button">

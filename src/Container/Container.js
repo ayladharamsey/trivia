@@ -1,10 +1,14 @@
 import React from 'react';
 import './Container.scss';
-import MovieCard from '../MovieCard/MovieCard'
+import MovieCard from '../MovieCard/MovieCard';
+import CharacterCards from '../CharacterCard/CharacterCards';
 
 const Container = (props) => {
-    console.log('container props: ', props);  
-    const movieData = props.movieData.map(movie => {
+    console.log('container props: ', props);
+    let cardData; 
+
+    if(props.movieData){
+      cardData = props.movieData.map(movie => {
         return (
             <section className="card-components">
                 <MovieCard
@@ -16,11 +20,26 @@ const Container = (props) => {
                 />
             </section>
         )
-    })
+    })} else {
+        console.log('character data', props.charactersData);
+        cardData = props.charactersData.map(character => {
+            console.log('character is: ', character);
+            return (
+                <section className="card-components">
+                    <CharacterCards
+                    id={character.name}
+                    name={character.name} 
+                    homeworld={character.homeworld}
+                    species={character.species}
+                    />
+                </section>
+            )
+        })
+    }
     return (
         <section>
-            {/* <CharacterCard /> */}
-            {movieData}
+            {cardData}
+            {/* {movies} */}
         </section>
     )
 }
