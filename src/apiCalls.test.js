@@ -1,11 +1,10 @@
-import React from 'react';
-import { shallow } from 'enzyme';
+
 import apiCalls from './apiCalls';
 
 describe('Character Data Fetching', () => { 
 
     it('should be able to fetch character data with the correct URL ', () => {
-  
+        
     });
 
     it('should should return character data(happy) ', () => {

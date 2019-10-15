@@ -10,6 +10,7 @@ exports[`Form should match the snapshots 1`] = `
     Name 
   </h3>
   <input
+    className="name-input"
     name="name"
     onChange={[Function]}
     placeholder="Enter name"
@@ -20,6 +21,7 @@ exports[`Form should match the snapshots 1`] = `
     Quote 
   </h3>
   <input
+    className="quote-input"
     name="quote"
     onChange={[Function]}
     placeholder="Enter quote"

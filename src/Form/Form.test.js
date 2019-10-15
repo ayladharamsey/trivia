@@ -28,34 +28,33 @@ describe('Form', () => {
     expect(wrapper.state('name')).toEqual('Ayla')
   });
 
-  it.skip('should be able to fire handleChange on keypress', () => {
+  it('should be able to fire handleChange on keypress', () => {
     wrapper.instance().handleChange =jest.fn();
     wrapper.instance().forceUpdate();
 
-    wrapper.find('input').simulate('change', mockEvent)
+    wrapper.find('.name-input').simulate('change', mockEvent)
     expect(wrapper.instance().handleChange).toHaveBeenCalledWith(mockEvent)
   });
-
 
   it('should run handleSubmit upon button click', () => {
     wrapper.instance().handleSubmit = jest.fn();
     wrapper.instance().forceUpdate();
     wrapper.find('button').simulate('click');
     expect(wrapper.instance().handleSubmit).toHaveBeenCalled();
-
   });
 
-  it.skip('should call on updateAppState when handleSubmit runs', () => {
-    wrapper.instance().updateAppState = jest.fn();
-    wrapper.instance().handleSubmit();
-    expect(wrapper.instance().updateAppState).toHaveBeenCalledWith({
+  it('should call on updateAppState when handleSubmit runs', () => {
+    const currentState = { name: 'Ayla', quote: 'If you aint talking money I dont wanna talk', rating: 'Pauper' };
+    const mockPerson = {
       name: 'Ayla',
-      quote: 'Is cool',
-      rating: 'Cool'
-    });
+      quote: 'If you aint talking money I dont wanna talk',
+      rating: 'Pauper'
+    }
 
 
+    wrapper.instance().setState(currentState)
+    wrapper.instance().handleSubmit({ preventDefault: jest.fn() });
+    expect(wrapper.instance().props.updateAppState).toHaveBeenCalledWith(mockPerson);
   });
-
 
 });
