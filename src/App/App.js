@@ -33,7 +33,6 @@ class App extends Component {
   }
 
   updateAppState = (formState) => {
-    console.log('updateAppState', formState);
     this.setState({
       name: formState.name, 
       quote: formState.quote,

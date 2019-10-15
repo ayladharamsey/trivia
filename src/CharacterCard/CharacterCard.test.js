@@ -3,8 +3,10 @@ import { shallow } from 'enzyme';
 import CharacterCard from './CharacterCard';
 
 describe('CharacterCard', () => {
+  let wrapper
 
   beforeEach(() => {
+    wrapper = shallow(<CharacterCard /> )
 
   });
 
