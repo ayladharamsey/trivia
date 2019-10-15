@@ -6,7 +6,7 @@ const MovieCard = ({ id, title, episode, release_year, favoriteCards, characters
   return (
     <section className="card">
         <article className="card-title">
-        <h3> Movie Title: {title}</h3>
+        <h3> Movie Title: <span>{title}</span></h3>
         </article>
         <article className="card-contents">
         <h3>Episode: <span>{episode}</span></h3>

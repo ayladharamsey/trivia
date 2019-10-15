@@ -1,22 +1,18 @@
 import React from 'react';
 import './CharacterCards.scss';
-import Star from "../assets/star.svg";
-import activeStar from "../assets/star-active.svg"
 
 const CharacterCards = ({ id, name, homeworld, population, species, films, favoriteCards, favoriteStatus }) => {
-   console.log('CharacterCards films', name, films)
   return (
-    
     <section className="card">
+        <div className="star-card-button" onClick={() => favoriteStatus(id)}></div>
         <article className="card-title">
-        <h3> Name: {name}</h3>
-        <img className="star-card-button" src={Star} alt="" onClick={() => favoriteStatus(id)}/>
+        <h3> Name: <span>{name}</span></h3>
         </article>
         <article className="card-contents">
-        <h3>Homeworld: {homeworld}</h3>
-        <p>Population: {population}</p>
-        <h3>Species: {species}</h3>
-        <h3 className="films">Films: {films}</h3>
+        <h3>Homeworld: <span>{homeworld}</span></h3>
+        <h3>Population: <span>{population}</span></h3>
+        <h3>Species: <span>{species}</span></h3>
+        <h3 className="films">Films: <span>{films}</span></h3>
         </article>
     </section>
   )
