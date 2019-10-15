@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { movieTitles, getCharacters, getPeople, getSpecies, getPlanets, getResidents } from '../apiCalls';
+import { movieTitles, getCharacters, getMovieCharacters, getPeople, getSpecies, getPlanets, getResidents } from '../apiCalls';
 import Form from '../Form/Form';
 import './App.scss';
 import HeaderContainer from '../HeaderContainer/HeaderContainer'
@@ -54,11 +54,21 @@ class App extends Component {
   }
   componentDidMount = () => {
     movieTitles('https://swapi.co/api/films')
-    .then(data => this.setMovie(data))
-    .catch(error => console.log('Holy bat smoke, something went wrong in App!'))
+    .then(data => {
+      console.log('movies data ', data);
+      return this.setMovie(data)})
+    .catch(error => console.log(error.message, 'Holy bat smoke, something went wrong in App!'))
   
+    getMovieCharacters(4)
+    .then(data => {
+      console.log('Movie character data ', data);
+    });
+
+    
     getCharacters('https://swapi.co/api/people/')
-    .then(data => getPeople(data.results))
+    .then(data => {
+      console.log('characterData ', data);
+      return getPeople(data.results)})
     .then(data => getSpecies(data))
     .then(data => this.setCharacters(data))
 

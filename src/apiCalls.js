@@ -16,14 +16,40 @@ export const movieTitles = moviesUrl => {
   .catch(error => console.log(error.message, 'Holy bat smoke batman, something went wrong with movies!'))
 }
 
-// export const getCharacters = charactersUrl => {
-//   const proxyurl = "https://cors-anywhere.herokuapp.com/";
-//   return fetch (proxyurl + charactersUrl)
-//   .then(response => response.json())
-//   .then(data => {
-//     return data.name})
-//   .catch(error => console.log(error.message, 'Do or not do. There is no try.'))
-// }
+export const getMovieCharacters = (movieId) => {
+  let movieUrl = `https://swapi.co/api/films/${movieId}`
+  return fetch(movieUrl)
+  .then(response => {
+    if(!response.ok) {
+      throw new Error(`${response.status} Didn't quite make it.`)
+    }
+    return response.json()
+  })
+  .then(data => data.characters)
+  .then(characters=> characters.splice(0,10))
+  .then(data => getCharacterSpecifics(data))
+}
+
+const getCharacterSpecifics = (characterUrl) => {
+  let charactersData = characterUrl.map(link => {
+    return fetch(link)
+    .then(response => {
+      if(!response.ok) {
+        throw new Error(`${response.status} Didn't quite make it.`)
+      }
+      return response.json()
+    })
+    .then(data => {
+      return {
+        name:data.name,
+        homeworld: data.homeworld,
+        species: data.species,
+        films: data.films
+      }
+    })
+  })
+  return Promise.all(charactersData)
+} 
 
 export const getCharacters = (charactersUrl) => {
   return fetch(charactersUrl)
