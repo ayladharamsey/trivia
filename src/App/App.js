@@ -129,7 +129,6 @@ class App extends Component {
                     />
                     <Container 
                       charactersData={this.state.characterData} 
-                      //planetsData={this.state.planetData}
                       favoriteCards={this.state.favoriteCards}
                       favoriteStatus={this.updateFavoriteCard}
                     />
