@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Nav should match the snapshot 1`] = `
+<section
+  className="navContainer"
+>
+  <h1>
+    Star Wars Trivia
+  </h1>
+  <Link
+    to="/"
+  >
+    <button>
+      Sign Out
+    </button>
+  </Link>
+</section>
+`;

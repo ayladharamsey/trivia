@@ -13,17 +13,12 @@
 }
 
 .app {
-  // background-image:url('https://media.giphy.com/media/MaThe6p8WAKbf9NDDM/giphy.gif'); 
-  background-color: black; //We can change this back in production - JMO
+  background-image:url('https://media.giphy.com/media/MaThe6p8WAKbf9NDDM/giphy.gif'); 
   background-size: 100%;
   background-position: center;
   font-family: Roboto;
-  height: 200vw;  //Might want to change this back as well - JMO
-  width: 100vw;
-  text-align: center;
-  justify-content: center;
+  height: 100vh;  
 }
-
 
 h1 {
   // color: #66FCF1;
