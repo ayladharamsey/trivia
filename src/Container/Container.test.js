@@ -1,4 +1,4 @@
-import React from 'react';
+serializes to the same stringimport React from 'react';
 import { shallow } from 'enzyme';
 import Container from './Container';
 

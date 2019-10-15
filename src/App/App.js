@@ -41,7 +41,6 @@ class App extends Component {
   }
 
   updateFavoriteCard = (favoriteStatus) => {
-    console.log(favoriteStatus)
      if(!this.state.favoriteCards.includes(favoriteStatus)) {
     //   favoriteStatus = !favoriteStatus
       this.setState({ favoriteCards: [...this.state.favoriteCards, favoriteStatus]});

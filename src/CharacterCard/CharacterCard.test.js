@@ -6,19 +6,26 @@ describe('CharacterCard', () => {
   let wrapper
 
   beforeEach(() => {
-    wrapper = shallow(<CharacterCard /> )
+    wrapper = shallow(<CharacterCard 
+      id = '1'
+      name = 'ayla'
+      homeworld = 'earth'
+      population = '100000'
+      species = 'homo sapien'
+      favoriteStatus = 'false'
+    />)
 
   });
 
-  it('should start with a default state', () => {
+  it.skip('should start with a default state', () => {
+    expect(wrapper.state('isFavorited')).toEqual(false)
+  });
+
+  it.skip('should match the snapshot', () => {
 
   });
 
-  it('should match the snapshot', () => {
-
-  });
-
-  it('should render the name, homeworld, population, species, and other films', () => {
+  it.skip('should render the name, homeworld, population, species, and other films', () => {
 
   });
 
