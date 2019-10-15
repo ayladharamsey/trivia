@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`UserProfile should match the snapshot 1`] = `
+<section
+  className="userContainer"
+>
+  <div
+    className="left"
+  >
+    <h2>
+      Welcome 
+      <span>
+        Ayla
+      </span>
+    </h2>
+  </div>
+  <div
+    className="right"
+  >
+    <h3>
+      Favorite Quote: 
+      <span>
+         
+        She likes toast
+         
+      </span>
+    </h3>
+    <h3>
+      Level: 
+      <span>
+        master
+      </span>
+    </h3>
+    <Link
+      to="/movies/:id/characters/favorites"
+    >
+      <button>
+        Favorite Characters
+      </button>
+    </Link>
+  </div>
+</section>
+`;
