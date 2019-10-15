@@ -24,12 +24,17 @@ const Container = (props) => {
         console.log('character data', props.charactersData);
         cardData = props.charactersData.map(character => {
             console.log('character is: ', character);
+            let population = props.planetsData.find(planet => {
+                console.log('planet is: ', planet);
+                return (planet.name === character.homeworld).population
+            });
             return (
                 <section className="card-components">
                     <CharacterCards
                     id={character.name}
                     name={character.name} 
                     homeworld={character.homeworld}
+                    population={population}
                     species={character.species}
                     />
                 </section>
@@ -39,7 +44,6 @@ const Container = (props) => {
     return (
         <section>
             {cardData}
-            {/* {movies} */}
         </section>
     )
 }

@@ -1,8 +1,8 @@
 import React from 'react';
-import './CharacterCard.css';
+import './CharacterCards.scss';
 import Star from "../assets/star.svg" 
 
-const CharacterCards = ({ id, name, homeworld, species, films, favoriteCards }) => {
+const CharacterCards = ({ id, name, homeworld, population, species, films, favoriteCards }) => {
   console.log('CharacterCards is here', name)
   return (
     
@@ -12,8 +12,9 @@ const CharacterCards = ({ id, name, homeworld, species, films, favoriteCards }) 
         </article>
         <article className="card-contents">
         <h3>Homeworld: {homeworld}</h3>
+        <p>Population: {population}</p>
         <h3>Species: {species}</h3>
-        <h3>Films: {films}</h3>
+        <h3 className="films">Films: {films}</h3>
         </article>
     </section>
   )
