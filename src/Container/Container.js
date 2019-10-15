@@ -43,7 +43,7 @@ const Container = (props) => {
         })
     }
     return (
-        <section>
+        <section className="card-area">
             {cardData}
         </section>
     )
