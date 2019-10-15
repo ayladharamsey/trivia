@@ -24,18 +24,19 @@ const Container = (props) => {
         console.log('character data', props.charactersData);
         cardData = props.charactersData.map(character => {
             console.log('character is: ', character);
-            let population = props.planetsData.find(planet => {
-                console.log('planet is: ', planet);
-                return (planet.name === character.homeworld).population
+            let pop = props.planetsData.find(planet => {
+                return (planet.name === character.homeworld)
             });
+            (pop) ? console.log('pop', pop) : pop = {population: 2000000}
             return (
                 <section className="card-components">
                     <CharacterCards
                     id={character.name}
                     name={character.name} 
                     homeworld={character.homeworld}
-                    population={population}
+                    population={pop.population}
                     species={character.species}
+                    favoriteStatus={props.favoriteStatus}
                     />
                 </section>
             )

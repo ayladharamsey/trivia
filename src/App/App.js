@@ -16,7 +16,7 @@ class App extends Component {
       movieData: [],
       characterData: [],
       planetData: [],
-      favoriteCards: [1, 2  ],
+      favoriteCards: [],
       name: '',
       quote: '',
       rating: '',
@@ -42,13 +42,14 @@ class App extends Component {
   }
 
   updateFavoriteCard = (favoriteStatus) => {
-    if(!this.state.favoriteCards.includes(favoriteStatus)) {
-      favoriteStatus[6] = !favoriteStatus[6]
+     if(!this.state.favoriteCards.includes(favoriteStatus)) {
+    //   favoriteStatus = !favoriteStatus
       this.setState({ favoriteCards: [...this.state.favoriteCards, favoriteStatus]});
-    } else {
-      favoriteStatus[6] = !favoriteStatus[6];
-      const removeCard = this.state.favoriteCards.filter(card => card !== favoriteStatus)
-      this.setState({ favoriteCards: removeCard });
+        
+    // } else {
+    //   favoriteStatus = !favoriteStatus;
+    //   const removeCard = this.state.favoriteCards.filter(card => card !== favoriteStatus)
+    //   this.setState({ favoriteCards: removeCard });
     } 
   }
   componentDidMount = () => {
@@ -125,6 +126,7 @@ class App extends Component {
                       charactersData={this.state.characterData} 
                       planetsData={this.state.planetData}
                       favoriteCards={this.state.favoriteCards}
+                      favoriteStatus={this.updateFavoriteCard}
                     />
                   </>
                 )
