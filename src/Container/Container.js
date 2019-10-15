@@ -4,7 +4,7 @@ import MovieCard from '../MovieCard/MovieCard';
 import CharacterCards from '../CharacterCard/CharacterCards';
 
 const Container = (props) => {
-    console.log('container props: ', props);
+    // console.log('container props: ', props);
     let cardData; 
 
     if(props.movieData){
@@ -21,21 +21,22 @@ const Container = (props) => {
             </section>
         )
     })} else {
-        console.log('character data', props.charactersData);
+         //console.log('character data', props.charactersData);
         cardData = props.charactersData.map(character => {
-            console.log('character is: ', character);
-            let pop = props.planetsData.find(planet => {
-                return (planet.name === character.homeworld)
-            });
-            (pop) ? console.log('pop', pop) : pop = {population: 2000000}
+             console.log('films are: ', character.films);
+            // let pop = props.planetsData.find(planet => {
+            //     return (planet.name === character.homeworld)
+            // });
+            // (pop) ? console.log('pop', pop) : pop = {population: 2000000}
             return (
                 <section className="card-components">
                     <CharacterCards
                     id={character.name}
                     name={character.name} 
                     homeworld={character.homeworld}
-                    population={pop.population}
+                    population={character.population}
                     species={character.species}
+                    films={character.films}
                     favoriteStatus={props.favoriteStatus}
                     />
                 </section>
