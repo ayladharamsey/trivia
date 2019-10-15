@@ -3,13 +3,14 @@ import { shallow } from 'enzyme';
 import App from './App';
 
 describe('App Functionality ', () => {
+  let wrapper; 
 
   beforeEach(() => {
-
+    wrapper = shallow(<App />);
   });
 
   it('should match the snapshot', () => {
-
+    expect(wrapper).toMatchSnapshot();
   });
 
   it('should have an empty state initially', () => {
