@@ -1,4 +1,4 @@
-## Star Wars Trivia 
+# Star Wars Trivia 
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 To view, clone down the repo and run 'npm start'. Enjoy!
