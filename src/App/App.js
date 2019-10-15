@@ -16,7 +16,7 @@ class App extends Component {
       movieData: [],
       characterData: [],
       planetData: [],
-      favoriteCards: [1, 2],
+      favoriteCards: [],
       name: '',
       quote: '',
       rating: '',
@@ -41,13 +41,14 @@ class App extends Component {
   }
 
   updateFavoriteCard = (favoriteStatus) => {
-    if(!this.state.favoriteCards.includes(favoriteStatus)) {
-      favoriteStatus[6] = !favoriteStatus[6]
+     if(!this.state.favoriteCards.includes(favoriteStatus)) {
+    //   favoriteStatus = !favoriteStatus
       this.setState({ favoriteCards: [...this.state.favoriteCards, favoriteStatus]});
-    } else {
-      favoriteStatus[6] = !favoriteStatus[6];
-      const removeCard = this.state.favoriteCards.filter(card => card !== favoriteStatus)
-      this.setState({ favoriteCards: removeCard });
+        
+    // } else {
+    //   favoriteStatus = !favoriteStatus;
+    //   const removeCard = this.state.favoriteCards.filter(card => card !== favoriteStatus)
+    //   this.setState({ favoriteCards: removeCard });
     } 
   }
 
@@ -110,20 +111,27 @@ class App extends Component {
             <Route
               path='/movies/:id/characters'  
               exact
-              render={ () => 
-                <>
+              render={ ({ match }) => { 
+                console.log('character params: ', match);
+                const { characters, favorites } = match.params;
+                console.log('characters, favorites', characters);
+                return(
+                  <>
                   <HeaderContainer 
-                    name={this.state.name} 
-                    quote={this.state.quote} 
-                    rating={this.state.rating} 
-                    signOut={this.signOut} 
-                  />
-                  <Container 
-                    charactersData={this.state.charactersData} 
-                    planetsData={this.state.planetsData}
-                    favoriteCards={this.state.favoriteCards}
-                  />
-                </>
+                      name={this.state.name} 
+                      quote={this.state.quote} 
+                      rating={this.state.rating} 
+                      signOut={this.signOut} 
+                    />
+                    <Container 
+                      charactersData={this.state.characterData} 
+                      planetsData={this.state.planetData}
+                      favoriteCards={this.state.favoriteCards}
+                      favoriteStatus={this.updateFavoriteCard}
+                    />
+                  </>
+                )
+                }                
               }
             />
             <Route
@@ -157,7 +165,7 @@ class App extends Component {
                       episode={movieData[numId - 1].episode_id}
                       text={movieData[numId - 1].opening_crawl}
                       favoriteCards={this.state.favoriteCards}
-                      characters={this.state.movieData.characters}
+                      characters={this.state.characterData}
                     />
                  )
                 }   
