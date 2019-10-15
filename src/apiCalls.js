@@ -4,8 +4,8 @@ export const movieTitles = moviesUrl => {
   .then(response => response.json())
   .then(movies => {
     const movieData = movies.results.map(movie => {
-      let { title, episode_id, release_date, opening_crawl, characters, species, planets } = movie;
-      return { title, episode_id, release_date, opening_crawl, characters, species, planets } 
+      let { title, episode_id, release_date, opening_crawl, characters } = movie;
+      return { title, episode_id, release_date, opening_crawl, characters } 
       //  const characterData = movie.characters.map(character => {
       //   return getCharacters(character)
       //   .then(name => ({ name }))
@@ -16,14 +16,65 @@ export const movieTitles = moviesUrl => {
   .catch(error => console.log(error.message, 'Holy bat smoke batman, something went wrong with movies!'))
 }
 
-// export const getCharacters = charactersUrl => {
-//   const proxyurl = "https://cors-anywhere.herokuapp.com/";
-//   return fetch (proxyurl + charactersUrl)
-//   .then(response => response.json())
-//   .then(data => {
-//     return data.name})
-//   .catch(error => console.log(error.message, 'Do or not do. There is no try.'))
-// }
+export const getMovieCharacters = (movieId) => {
+  let movieUrl = `https://swapi.co/api/films/${movieId}`
+  return fetch(movieUrl)
+  .then(response => {
+    if(!response.ok) {
+      throw new Error(`${response.status} Didn't quite make it.`)
+    }
+    return response.json()
+  })
+  .then(data => data.characters)
+  .then(characters=> characters.splice(0,10))
+  .then(data => getCharacterSpecifics(data))
+}
+
+const getCharacterSpecifics = (characterUrl) => {
+  let charactersData = characterUrl.map(link => {
+    return fetch(link)
+    .then(response => {
+      if(!response.ok) {
+        throw new Error(`${response.status} Didn't quite make it.`)
+      }
+      return response.json()
+    })
+    .then(data => {
+      return {
+        name:data.name,
+        homeworld: data.homeworld,
+        species: data.species,
+        films: data.films
+      }
+    })
+  })
+  return Promise.all(charactersData)
+} 
+
+export const getFilmTitles = (characters) => {
+  let films = characters.map(character => {
+    let filmTitles = character.films.map(film => {
+      return fetch(film)
+      .then(response => {
+        if(!response.ok) {
+          throw new Error(`${response.status} These are not the droids you're looking for.`)
+        }
+        return response.json()
+      })
+      .then(film => film.title)
+    })
+    return Promise.all(filmTitles)
+    .then(filmTitles => {
+      return {
+        ...character,
+        films: filmTitles
+      }
+    }
+    )
+  })
+  return Promise.all(films)
+}
+
 
 export const getCharacters = (charactersUrl) => {
   return fetch(charactersUrl)
@@ -53,7 +104,8 @@ export const getPeople = (people) => {
         homeworld: data.name,
         population: data.population,
         name: person.name,
-        species: person.species
+        species: person.species,
+        films: person.films
         }))
       .catch(error => console.log(error));
   });
@@ -85,9 +137,7 @@ export const getResidents = (planets) => {
     return Promise.all(residents)
       .then(residents => ({
         name: planet.name,
-        terrain: planet.terrain,
         population: planet.population,
-        climate: planet.climate,
         residents: residents
       }))
   });
