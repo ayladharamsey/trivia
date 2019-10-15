@@ -25,3 +25,12 @@ const CharacterCards = ({ id, name, homeworld, population, species, films, favor
 }
 
 export default CharacterCards;
+
+CharacterCards.propTypes = {
+  id: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  homeworld: PropTypes.string,
+  population: PropTypes.number,
+  species: PropTypes.string.isRequired,
+  films: PropTypes.array.isRequired
+}
