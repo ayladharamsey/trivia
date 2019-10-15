@@ -16,7 +16,7 @@ class App extends Component {
       movieData: [],
       characterData: [],
       planetData: [],
-      favoriteCards: [1, 2  ],
+      favoriteCards: [1, 2],
       name: '',
       quote: '',
       rating: '',
@@ -32,11 +32,11 @@ class App extends Component {
     })
   }
 
-  updateAppState = (formState) => {
+  updateAppState = ({ name, quote, rating }) => {
     this.setState({
-      name: formState.name, 
-      quote: formState.quote,
-      rating: formState.rating 
+      name: name, 
+      quote: quote,
+      rating: rating 
     })
   }
 
