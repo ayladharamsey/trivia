@@ -50,30 +50,12 @@ describe('App Functionality ', () => {
     });
   });
 
-  it.skip('should be able update the state with the users info', () => {
-    const expected = {
-      movieData: [],
-      characterData: [],
-      planetData: [],
-      favoriteCards: [],
-      name: 'Mildred LeStrange',
-      quote: 'A slice of Pumperknickle a day keeps the doctor away',
-      rating: 'generally appealing',
-      errMsg: 'dang flabbit!'
-    }
-  
-    expect(wrapper.state()).toBe({
-      movieData: [],
-      characterData: [],
-      planetData: [],
-      favoriteCards: [],
-      name: '',
-      quote: '',
-      rating: '',
-      errMsg: ''
-    });
-    wrapper.instance().updateAppState('Mildred LeStrange', 'A slice of Pumperknickle a day keeps the doctor away', 'generally appealing');
-    expect(wrapper.state()).toEqual(expected)
+  it('should be able update the state with the users info', () => {
+    const mockFormState= { name: 'Mildred Lestrange', quote: 'I know why the caged bird sings', rating: 'Queeny'}
+    wrapper.instance().updateAppState(mockFormState);
+    expect(wrapper.state('name')).toEqual('Mildred Lestrange');
+    expect(wrapper.state('quote')).toEqual('I know why the caged bird sings');
+    expect(wrapper.state('rating')).toEqual('Queeny');
   });
 
   it('should be able to update state by favoriting a card', () => {
@@ -84,7 +66,7 @@ describe('App Functionality ', () => {
 
   it('should be able to update state with character data', () => {
     expect(wrapper.state('characterData')).toEqual([])
-    wrapper.instance().setCharacters(['billy', 'bobbyAnn'])
+    wrapper.instance().setCharacters(['billy', 'bobby ann'])
     expect(wrapper.state('characterData').length).toEqual(2)
   });
 

@@ -1,7 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import HeaderContainer from './HeaderContainer';
-import { isJSXEmptyExpression } from '@babel/types';
 
 describe('HeaderContainer', () => {
   let wrapper;
