@@ -18,7 +18,7 @@ class Form extends Component {
         this.setState({[event.target.name]: event.target.value})
     }
 
-    handleSubmit = event => {
+    handleSubmit = () => {
         const{ updateAppState } = this.props
         updateAppState(this.state);
         this.setState({
@@ -41,6 +41,7 @@ class Form extends Component {
                     onChange={this.handleChange} 
                     name="name"
                     value={this.state.name}
+                    className='name-input'
                     />
                 <h3>Quote </h3>
                 <input 
@@ -49,6 +50,7 @@ class Form extends Component {
                     onChange={this.handleChange}
                     name="quote"
                     value={this.state.quote} 
+                    className='quote-input'
                     />
                 <h3> Select Jedi Rating </h3>
                 <div className='select'>

@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MovieCard should match the snapshot 1`] = `
+<section
+  className="card"
+>
+  <article
+    className="card-title"
+  >
+    <h3>
+       Movie Title: 
+      starwars
+    </h3>
+  </article>
+  <article
+    className="card-contents"
+  >
+    <h3>
+      Episode: 
+      <span />
+    </h3>
+    <h3>
+      Release Year: 
+      <span>
+        2002
+      </span>
+    </h3>
+    <Link
+      key="1"
+      to="/movies/1"
+    >
+      <button>
+         Characters 
+      </button>
+    </Link>
+  </article>
+</section>
+`;

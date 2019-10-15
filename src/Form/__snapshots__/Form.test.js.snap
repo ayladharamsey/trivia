@@ -1,0 +1,78 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Form should match the snapshots 1`] = `
+<form>
+  <img
+    alt="star wars logo"
+    src="logo.png"
+  />
+  <h3>
+    Name 
+  </h3>
+  <input
+    className="name-input"
+    name="name"
+    onChange={[Function]}
+    placeholder="Enter name"
+    type="text"
+    value=""
+  />
+  <h3>
+    Quote 
+  </h3>
+  <input
+    className="quote-input"
+    name="quote"
+    onChange={[Function]}
+    placeholder="Enter quote"
+    type="text"
+    value=""
+  />
+  <h3>
+     Select Jedi Rating 
+  </h3>
+  <div
+    className="select"
+  >
+    <select
+      name="rating"
+      onChange={[Function]}
+      value="Select Rating"
+    >
+      <option
+        disabled={true}
+        value="Select Rating"
+      >
+        Select Rating
+      </option>
+      <option
+        value="apprentice"
+      >
+        Apprentice
+      </option>
+      <option
+        value="knight"
+      >
+        Knight
+      </option>
+      <option
+        value="master"
+      >
+        Master
+      </option>
+    </select>
+  </div>
+  <h5 />
+  <Link
+    to="/movies"
+  >
+    <button
+      className="submit"
+      disabled={true}
+      onClick={[Function]}
+    >
+      Submit
+    </button>
+  </Link>
+</form>
+`;
