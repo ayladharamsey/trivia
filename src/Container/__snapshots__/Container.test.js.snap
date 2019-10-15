@@ -1,0 +1,57 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Container should match the snapshot 1`] = `
+<section>
+  <section
+    className="card-components"
+  >
+    <MovieCard
+      characters={
+        Array [
+          "url.com",
+          "url.com",
+          "url.com",
+        ]
+      }
+      episode={1}
+      id={1}
+      release_year="2002-05-16"
+      title="starwars"
+    />
+  </section>
+  <section
+    className="card-components"
+  >
+    <MovieCard
+      characters={
+        Array [
+          "url.com",
+          "url.com",
+          "url.com",
+        ]
+      }
+      episode={1}
+      id={1}
+      release_year="2002-05-16"
+      title="starwars"
+    />
+  </section>
+  <section
+    className="card-components"
+  >
+    <MovieCard
+      characters={
+        Array [
+          "url.com",
+          "url.com",
+          "url.com",
+        ]
+      }
+      episode={1}
+      id={1}
+      release_year="2002-05-16"
+      title="starwars"
+    />
+  </section>
+</section>
+`;
