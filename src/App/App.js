@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { movieTitles, getCharacters, getMovieCharacters, getPeople, getSpecies, getPlanets, getResidents } from '../apiCalls';
+import { movieTitles, getFilmTitles, getMovieCharacters, getPeople, getSpecies, getPlanets, getResidents } from '../apiCalls';
 import Form from '../Form/Form';
 import './App.scss';
 import HeaderContainer from '../HeaderContainer/HeaderContainer'
@@ -59,23 +59,25 @@ class App extends Component {
       return this.setMovie(data)})
     .catch(error => console.log(error.message, 'Holy bat smoke, something went wrong in App!'))
   
-    getMovieCharacters(4)
+    getMovieCharacters(6) //Remember to make this dynamic
     .then(data => {
       console.log('Movie character data ', data);
-    });
-
-    
-    getCharacters('https://swapi.co/api/people/')
+      return data
+    })
+   // getCharacters('https://swapi.co/api/people/')
     .then(data => {
       console.log('characterData ', data);
-      return getPeople(data.results)})
+      return getPeople(data)})
     .then(data => getSpecies(data))
+    //.then(data => getFilmTitles(data))
     .then(data => this.setCharacters(data))
 
     getPlanets('https://swapi.co/api/planets/')
     // .then(data => console.log('planet data is : ', data))
     .then(data => getResidents(data.results))
-    .then(data => this.setPlanets(data))
+    .then(data => {
+      console.log('residents info: ', data);
+      return this.setPlanets(data)})
   }
 
   setMovie = (movieData) => {
@@ -134,7 +136,7 @@ class App extends Component {
                     />
                     <Container 
                       charactersData={this.state.characterData} 
-                      planetsData={this.state.planetData}
+                      //planetsData={this.state.planetData}
                       favoriteCards={this.state.favoriteCards}
                       favoriteStatus={this.updateFavoriteCard}
                     />
