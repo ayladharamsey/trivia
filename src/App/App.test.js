@@ -7,7 +7,6 @@ describe('App Functionality ', () => {
 
   beforeEach(() => {
     wrapper = shallow(<App />);
-
   });
 
   it('should match the snapshot', () => {
@@ -25,7 +24,6 @@ describe('App Functionality ', () => {
       rating: '',
       errMsg: ''
     });
-
   });
 
   it('should be able to sign out of the application', () => {
@@ -94,14 +92,11 @@ describe('App Functionality ', () => {
     expect(wrapper.state('movieData')).toEqual([])
     wrapper.instance().setMovie(['the land before time', 'the land before time ii'])
     expect(wrapper.state('movieData').length).toEqual(2)
-
   });
 
   it('should be able to update state with planet data ', () => {
     expect(wrapper.state('planetData')).toEqual([])
     wrapper.instance().setPlanets(['pluto', 'mercury'])
     expect(wrapper.state('planetData').length).toEqual(2)
-
   });
-
 });
