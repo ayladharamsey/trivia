@@ -2,14 +2,15 @@ import React, { Component } from 'react';
 import './CharacterCard.css';
 
 class CharacterCard extends Component {
-    constructor() {
-    super();
+    constructor(props) {
+    super(props);
     this.state ={
     isFavorited: false
     }
   }
 
   render() {
+      console.log('CharacterCard');
     return (
       <section className="card">
         <article className="card-title">
