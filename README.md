@@ -22,8 +22,20 @@ The learning goals for this project are as follows:
 - Use propTypes for every component receiving props.
 - Write tests for React components, asynchronous functionality, and route handling.
 
+#### Wireframe
+
+![SWAPI-Wireframe-1](https://user-images.githubusercontent.com/17992280/67040041-e6ad4880-f0df-11e9-88e3-8db2e873dc78.jpg)
+
+![SWAPI-Wireframe-2](https://user-images.githubusercontent.com/17992280/67040054-eca32980-f0df-11e9-8026-82e2588ed8b1.jpg)!
+
+![SWAPI-Wireframe-3](https://user-images.githubusercontent.com/17992280/67040065-ef058380-f0df-11e9-93ca-6c4165bc6fc4.jpg)
+
+#### Project Management/Trello
+
+https://trello.com/b/q8JraQUZ/swapi-trivia
 
 ### Screenshots
+
 
 <img width="1407" alt="Screen Shot 2019-10-15 at 4 30 54 PM" src="https://user-images.githubusercontent.com/17992280/66874794-914f2b00-ef69-11e9-95d4-edd4e5465e0a.png">
 
