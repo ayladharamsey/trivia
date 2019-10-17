@@ -1,6 +1,6 @@
-# SWAPI-Box
+# SWAPI-Trivia
 
-SWAPI-Box is a web application that uses the Star Wars API to tap into a “black hole” of Star Wars data. Mwahaha. 
+SWAPI-Trivia is a web application that uses the Star Wars API to tap into a “black hole” of Star Wars data. Mwahaha. 
 
 The application loads with a login screen that allows the potential Jedi apprentice to input their name, their favorite quote and jedi level. Clicking Submit takes them to a screen populated with cards highlighting the first seven movies in the Star Wars franchise.
 
